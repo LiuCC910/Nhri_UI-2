@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>國家衛生研究院－計畫管理系統｜登入</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+
+	<!-- 客製化CSS暫用 -->
+	<link href="../assets/css/customize.css" rel="stylesheet" />
+	<link href="../favicon.png" rel="icon" type="image/x-icon">
+</head>
+<body class='pace-top'>
+	<!-- BEGIN #loader -->
+	<div id="loader" class="app-loader">
+		<span class="spinner"></span>
+	</div>
+	<!-- END #loader -->
+
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		<!-- BEGIN login -->
+		<div class="login login-v1">
+			<!-- BEGIN login-container -->
+			<div class="login-container">
+				<!-- BEGIN login-header -->
+				<div class="login-header">
+					<div class="brand">
+						<div class="d-flex align-items-center">
+							<img src="../index_list/logo_nhri_s.png"/> <b class="me-1">管理端</b> 登入
+						</div>
+						<small>財團法人國家衛生研究院 (NHRI) ::計畫管理系統::</small>
+					</div>
+					<div class="icon">
+						<i class="fa fa-lock"></i>
+					</div>
+				</div>
+				<!-- END login-header -->
+				
+				<!-- BEGIN login-body -->
+				<div class="login-body">
+					<!-- BEGIN login-content -->
+					<div class="login-content fs-13px">
+						<form action="index.html" method="GET">
+							<div class="form-floating mb-20px">
+								<input type="email" class="form-control fs-13px h-45px" id="emailAddress" placeholder="請輸入登入帳號" />
+								<label for="emailAddress" class="d-flex align-items-center">帳號</label>
+							</div>
+							<div class="form-floating mb-20px">
+								<input type="password" class="form-control fs-13px h-45px" id="password" placeholder="請輸入登入密碼" />
+								<label for="password" class="d-flex align-items-center">密碼</label>
+							</div>
+							<div class="form-check mb-20px">
+								<input class="form-check-input" type="checkbox" value="" id="rememberMe" />
+								<label class="form-check-label" for="rememberMe">
+									記住我的登入帳號 (公用電腦請勿勾選)
+								</label>
+							</div>
+							<div class="login-buttons">
+								<button type="submit" class="btn btn-theme h-45px d-block w-100 btn-lg">登入</button>
+							</div>
+						</form>
+					</div>
+					<!-- END login-content -->
+				</div>
+				<!-- END login-body -->
+			</div>
+			<!-- END login-container -->
+		</div>
+		<!-- END login -->
+		
+		<!-- BEGIN scroll-top-btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- END scroll-top-btn -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="../assets/js/vendor.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+</body>
+</html>

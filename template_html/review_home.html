@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>國家衛生研究院－計畫評審系統</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+	<!-- ================== BEGIN page-css ================== -->
+	<link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
+	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+	<link href="../assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
+
+	<link href="../assets/css/customize.css" rel="stylesheet" />
+	<link href="../favicon.png" rel="icon" type="image/x-icon">
+</head>
+<body class='pace-top'>
+	
+
+	<!-- BEGIN #loader -->
+	<div id="loader" class="app-loader">
+		<span class="spinner"></span>
+	</div>
+	<!-- END #loader -->
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-without-header app-without-sidebar">
+		
+			<!-- BEGIN #content -->
+			<div id="content" class="app-content p-0">
+				
+					<!-- BEGIN pos -->
+					<div class="pos pos-with-header pos-with-sidebar" id="pos">
+						<!-- BEGIN pos-header -->
+						<div class="pos-header text-white bg-nhri">
+							<div class="logo">
+								<a href="#">
+									<div class="logo-img"><img src="../index_list/logo_nhri_white.png"> </div>
+									<div class="logo-text text-white">國家衛生研究院計畫評審</div>
+								</a>
+							</div>
+							<div class="time">
+								<div class="d-flex flex-wrap text-nowrap mb-n1">
+									<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1 text-white active">計畫評審首頁</a>
+									<a href="#" class="btn btn-lg border-0 me-1 mb-1 text-white">個人資料設定</a>
+								</div>
+							</div>
+							<div class="nav">
+								<span class="d-none d-md-inline">歡迎，Liucc, 劉佳淇委員
+									｜
+									<a href="#">登出</a>
+								</span>
+							</div>
+						</div>
+						<!-- END pos-header -->
+						
+						<!-- BEGIN pos-content -->
+						<div class="pos-content">
+							<div class="pos-content-container">
+								<div class="d-md-flex align-items-center mb-4">
+									<div class="pos-booking-title flex-1">
+										<div id="options" class="mb-3">
+											<div class="d-flex flex-wrap text-nowrap mb-n1" style="padding-top:10px;">
+												<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1 active">全部 (21)</a>
+												<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1">待審核 (9)</a>
+												<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1">草稿 (6)</a>
+												<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1">已送出 (5)</a>
+												<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1">逾期未審 (1)</a>
+											</div>
+										</div>
+									</div>
+									<div>
+										<div class="w-150px" style="margin:0 20px 0 0;">
+											<select class="form-select">
+												<option>112年 (21)</option>
+												<option>111年 (15)</option>
+												<option>110年 (19)</option>
+											</select>
+										</div>
+									</div>
+									<div>
+										<div class="w-200px">
+											<input type="text" id="nosearch" class="form-control form-control-lg fs-13px" placeholder="請輸入計畫編號或名稱" />
+										</div>
+									</div>
+								</div>
+								<div class="data-table">
+									<!-- BEGIN table -->
+									<table id="data-table-default" class="table table-striped table-bordered align-middle">
+										<thead>
+											<tr>
+												<th width="1%">&nbsp;</th>
+												<th class="text-nowrap">年度</th>
+												<th class="text-nowrap">類別</th>
+												<th class="text-nowrap">編號</th>
+												<th class="text-nowrap">計畫名稱</th>
+												<th class="text-nowrap">執行機構</th>
+												<th class="text-nowrap">評審截止 <i class="fas fa-caret-down"></i></th>
+												<th class="text-nowrap">狀態</th>
+												<th class="text-nowrap" data-orderable="false">管理</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td width="1%" class="fw-bold">1</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10802NI</td>
+												<td class="title"><a href="#" class="text-decoration-none">探討大腦印記體的機轉功能:提供精神及神經疾病新治療策略</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-yellow text-black">草稿</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">2</td>
+												<td>112年</td>
+												<td>子計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>中國醫藥大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-danger">待審核</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">3</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none disabled">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-green">已送出</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle disabled"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">4</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10802NI</td>
+												<td class="title"><a href="#" class="text-decoration-none">探討大腦印記體的機轉功能:提供精神及神經疾病新治療策略</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-yellow text-black">草稿</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">5</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-yellow text-black">草稿</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">6</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none disabled">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-green">已送出</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle disabled"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">7</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10802NI</td>
+												<td class="title"><a href="#" class="text-decoration-none disabled">探討大腦印記體的機轉功能:提供精神及神經疾病新治療策略</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-secondary">逾期未審</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle disabled"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">8</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none disabled">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-green">已送出</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle disabled"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">9</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none disabled">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-green">已送出</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle disabled"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+											<tr>
+												<td width="1%" class="fw-bold">10</td>
+												<td>112年</td>
+												<td>主計畫</td>
+												<td>EX112-10821PO</td>
+												<td class="title"><a href="#" class="text-decoration-none disabled">探討大腦印記體的機轉功能:提供精神及神經疾病</a></td>
+												<td>國立臺灣大學</td>
+												<td>2023/9/4 17:00</td>
+												<td>
+													<span class="badge bg-green">已送出</span>
+												</td>
+												<td class="text-nowrap">
+													<a href="javascript:;" class="btn btn-warning btn-icon btn-circle disabled"><i class="fa fa-pencil-alt"></i></a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- END table -->
+									<div class="row" style="margin-top: 20px;">
+										<div class="col-sm-12 col-md-5">
+											<div class="dataTables_info" id="data-table-default_info" role="status" aria-live="polite">共 21 筆資料，目前顯示第 1 到 10 筆</div>
+										</div>
+										<div class="col-sm-12 col-md-7">
+											<div class="dataTables_paginate paging_simple_numbers" id="data-table-default_paginate">
+												<ul class="pagination">
+													<li class="paginate_button page-item previous disabled" id="data-table-default_previous">
+														<a aria-controls="data-table-default" aria-disabled="true" role="link" data-dt-idx="previous" tabindex="0" class="page-link">上一頁</a>
+													</li>
+													<li class="paginate_button page-item active"><a href="#" aria-controls="data-table-default" role="link" aria-current="page" data-dt-idx="0" tabindex="0" class="page-link">1</a></li>
+													<li class="paginate_button page-item "><a href="#" aria-controls="data-table-default" role="link" data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
+													<li class="paginate_button page-item "><a href="#" aria-controls="data-table-default" role="link" data-dt-idx="1" tabindex="0" class="page-link">3</a></li>
+													<li class="paginate_button page-item next" id="data-table-default_next">
+														<a href="#" aria-controls="data-table-default" role="link" data-dt-idx="next" tabindex="0" class="page-link">下一頁</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- END pos-content -->
+						
+						<!-- BEGIN pos-sidebar -->
+						<div class="pos-sidebar">
+							<div class="h-100 d-flex flex-column">
+								<div class="pos-sidebar-header bg-info">
+									<div class="back-btn">
+										<button type="button" data-dismiss-class="pos-sidebar-mobile-toggled" data-target="#pos" class="btn border-0">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+									</div>
+									<div class="icon"><i class="fa fa-bell"></i></div>
+									<div class="title">訊息通知
+										<span class="ms-2">
+											<i class="fa fa-info-circle" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-title="個人訊息與系統公告通知" data-bs-placement="top" data-bs-content="個人訊息通知會保留三個月內的通知，並同時透過email發送。若您無法收到email通知，請確認您的email設定以及檢查垃圾信箱。" data-original-title="" title=""></i>
+										</span>
+									</div>
+									<div class="order">未讀: <b>3</b></div>
+								</div>
+								<div class="pos-sidebar-nav">
+									<ul class="nav nav-tabs nav-fill">
+										<li class="nav-item">
+											<a class="nav-link active" href="#" data-bs-toggle="tab" data-bs-target="#newOrderTab">個人訊息 (5)</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#orderSettingTab">系統公告 (2)</a>
+										</li>
+									</ul>
+								</div>
+								<div class="pos-sidebar-body tab-content" data-scrollbar="true" data-height="100%">
+									<div class="tab-pane fade h-100 show active" id="newOrderTab">
+										<div>
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/9/1 <small class="badge bg-danger" style="float: right;">未讀</small></p>
+													<h5>計畫評審即將截止通知</h5>
+													您有 <b>4</b> 筆計畫即將於 <b>2023/9/4 17:00</b> 截止評審。截止後將無法再編修，若您有尚未送出的草稿，請務必儘速評審後送出。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/8/25 <small class="badge bg-danger" style="float: right;">未讀</small></p>
+													<h5>計畫評審分派通知</h5>
+													您於有 <b>2023/8/25 10:00</b> 被分派了 <b>5</b> 筆計畫評審。評審中可儲存為草稿，草稿可進行重複編修，但請注意於截止前確認送出。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/8/21 <small class="badge bg-default text-gray-900" style="float: right;">已讀</small></p>
+													<h5>計畫評審分派通知</h5>
+													您於有 <b>2023/8/21 10:00</b> 被分派了 <b>3</b> 筆計畫評審。評審中可儲存為草稿，草稿可進行重複編修，但請注意於截止前確認送出。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/8/11 <small class="badge bg-default text-gray-900" style="float: right;">已讀</small></p>
+													<h5>計畫評審分派通知</h5>
+													您於有 <b>2023/8/11 10:00</b> 被分派了 <b>5</b> 筆計畫評審。評審中可儲存為草稿，草稿可進行重複編修，但請注意於截止前確認送出。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/8/9 <small class="badge bg-default text-gray-900" style="float: right;">已讀</small></p>
+													<h5>計畫評審分派通知</h5>
+													您於有 <b>2023/8/9 10:00</b> 被分派了 <b>5</b> 筆計畫評審。評審中可儲存為草稿，草稿可進行重複編修，但請注意於截止前確認送出。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+										</div>
+									</div>
+									<div class="tab-pane fade h-100" id="orderSettingTab">
+										<div>
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/8/30 <small style="float: right;"><i class="fas fa-bookmark" style="color:rgb(161, 4, 4);" title="置頂公告"></i></small></p>
+													<h5>系統停機公告</h5>
+													系統將於 2023/9/12 10:00~13:00 進行例行維護停機，屆時將無法登入使用，謝謝配合。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+											<div class="d-sm-flex">
+												<div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+													<p class="time">2023/9/5</p>
+													<h5>國家衛生研究院 113年度4項合作計畫徵求</h5>
+													政府推動「長照十年計畫2.0」提供從支持家庭、居家、社區到住宿式照顧之多元連續服務，建立以社區為基礎的照顧型社區，並創新高齡醫療與照護服務模式。爰此，行政院於109年指示國衛院擔任「高齡醫學暨健康福祉研究中心」主責單位，並依計畫徵求及管理相關研究計畫。
+												</div>
+											</div>
+											<hr class="bg-gray-500">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END pos-sidebar -->
+					</div>
+					<!-- END pos -->
+					
+					<!-- BEGIN pos-mobile-sidebar-toggler -->
+					<a href="#" class="pos-mobile-sidebar-toggler" data-toggle-class="pos-sidebar-mobile-toggled" data-target="#pos">
+						<i class="iconify display-6" data-icon="solar:bag-smile-bold-duotone"></i>
+						<span class="badge">5</span>
+					</a>
+					<!-- END pos-mobile-sidebar-toggler -->
+
+					<!-- BEGIN #footer -->
+					<div id="footer" class="app-footer m-0">
+						財團法人國家衛生研究院版權所有 &copy; 2023 NHRI All Rights Reserved.
+					</div>
+					<!-- END #footer -->
+
+				
+			</div>
+			<!-- END #content -->
+			
+
+			<!-- BEGIN scroll-top-btn -->
+			<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+			<!-- END scroll-top-btn -->
+		
+	</div>
+	<!-- END #app -->
+	
+	<!-- BEGIN #modalPos -->
+	<div class="modal modal-pos fade" id="modalPos">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-body p-0">
+					<a href="#" data-bs-dismiss="modal" class="btn-close position-absolute top-0 end-0 m-4"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END #modalPos -->
+	
+
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="../assets/js/vendor.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="../assets/js/demo/pos-header.demo.js"></script>
+	<script src="../assets/js/demo/pos-customer-order.demo.js"></script>
+	<script src="../assets/plugins/switchery/dist/switchery.min.js"></script>
+	<script src="../assets/js/demo/form-slider-switcher.demo.js"></script>
+	<script src="../assets/js/demo/pos-counter-checkout.demo.js"></script>
+	<script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+	<!-- ================== END page-js ================== -->
+</body>
+</html>

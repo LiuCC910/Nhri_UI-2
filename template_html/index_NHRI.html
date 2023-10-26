@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>國家衛生研究院－計畫管理系統</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+	<!-- ================== BEGIN page-css ================== -->
+	<link href="../assets/plugins/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+	<link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+	<link href="../assets/plugins/datepickk/dist/datepickk.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
+
+	<!-- 客製化CSS暫用 -->
+	<link href="../assets/css/customize.css" rel="stylesheet" />
+	<link href="../favicon.png" rel="icon" type="image/x-icon">
+</head>
+<body>
+	<!-- BEGIN #loader -->
+	<div id="loader" class="app-loader">
+		<span class="spinner"></span>
+	</div>
+	<!-- END #loader -->
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-header-fixed app-sidebar-fixed app-content-full-height">
+		<!-- BEGIN #header -->
+		<div id="header" class="app-header">
+			<!-- BEGIN navbar-header -->
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand"><img src="../index_list/logo_nhri.png"> <b class="me-3px"> 國家衛生研究院 ::計畫管理系統::</b></a>
+				<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- END navbar-header -->
+			<!-- BEGIN header-nav -->
+			<div class="navbar-nav">
+                <span>
+                    <span class="d-none d-md-inline">2023-09-01 09:00 於 100.10.9.147 第 1001 次登入</span>
+                </span>
+				<div class="navbar-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
+						<i class="fa fa-bell"></i>
+						<span class="badge">2</span>
+					</a>
+					<div class="dropdown-menu media-list dropdown-menu-end">
+						<div class="dropdown-header">系統訊息 (2)</div>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-bug media-object bg-gray-500"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">5分鐘後即將自動登出 <i class="fa fa-exclamation-circle text-danger"></i></h6>
+								<div class="text-muted fs-10px">1 分鐘前</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-bug media-object bg-gray-500"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">密碼即將到期提醒</h6>
+								<p>每30天請更換一次密碼，且不可以與前三次使用過之密碼相同。提醒您記得儘早更換。</p>
+								<div class="text-muted fs-10px">2023-09-01 10:00</div>
+							</div>
+						</a>
+						<div class="dropdown-footer text-center">
+							<a href="javascript:;" class="text-decoration-none">看全部</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="navbar-item navbar-user dropdown">
+					<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+						<img src="../assets/img/user/user-4.png" alt="" /> 
+						<span>
+							<span class="d-none d-md-inline">Admin, 凌網(hyweb)</span>
+							<b class="caret"></b>
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end me-1">
+						<a href="extra_profile.html" class="dropdown-item">編輯個人資料</a>
+						<a href="settings.html" class="dropdown-item">個人設定</a>
+						<div class="dropdown-divider"></div>
+						<a href="login.html" class="dropdown-item">登出</a>
+					</div>
+				</div>
+			</div>
+			<!-- END header-nav -->
+		</div>
+		<!-- END #header -->
+	
+		<!-- BEGIN #sidebar --><!--左側共用MENU項目-->
+		<div id="sidebar" class="app-sidebar app-sidebar-transparent" data-bs-theme="dark">
+			<!-- BEGIN scrollbar -->
+			<div class="app-sidebar-content nhri" data-scrollbar="true" data-height="100%">
+				<!-- BEGIN menu -->
+				<div class="menu">
+					<div class="menu-profile">
+						<a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
+							<div class="menu-profile-cover with-shadow"></div>
+							<div class="menu-profile-info">
+								<div class="d-flex align-items-center">
+									<div class="flex-grow-1">
+										系統服務/下載
+									</div>
+									<div class="menu-caret ms-auto"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="appSidebarProfileMenu" class="collapse">
+						<div class="menu-item pt-5px">
+							<a href="javascript:;" class="menu-link">
+								<div class="menu-icon"><i class="icon-docs"></i></div>
+								<div class="menu-text"> 文件及表單</div>
+							</a>
+						</div>
+						<div class="menu-item pb-5px">
+							<a href="javascript:;" class="menu-link">
+								<div class="menu-icon"><i class="fab fa-simplybuilt"></i></div>
+								<div class="menu-text"> e-Learning</div>
+							</a>
+						</div>
+						<div class="menu-item pb-5px">
+							<a href="javascript:;" class="menu-link">
+								<div class="menu-icon"><i class="fa fa-question-circle"></i></div>
+								<div class="menu-text"> 相關軟體資源</div>
+							</a>
+						</div>
+						<div class="menu-divider m-0"></div>
+					</div>
+					<div class="menu-header">功能選單</div>
+					<div class="menu-item active">
+						<a href="#" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-screen-desktop"></i>
+							</div>
+							<div class="menu-text text-yellow">儀表板</div>
+							<div class="menu-badge bg-success">2</div>
+						</a>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-sitemap"></i>
+							</div>
+							<div class="menu-text">單位規劃</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link"><div class="menu-text">單位規劃</div></a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位規劃檢視</div>
+									<div class="menu-caret"></div>
+								</a>
+								<div class="menu-submenu">
+									<div class="menu-item">
+										<a href="#" class="menu-link">
+											<div class="menu-text">單位彙整人/主管</div>
+										</a>
+									</div>
+									<div class="menu-item">
+										<a href="#" class="menu-link">
+											<div class="menu-text">學發處</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link"><div class="menu-text">單位主管簽核</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link"><div class="menu-text">學發處彙整</div></a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-list-ol"></i>
+							</div>
+							<div class="menu-text">院內行政計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">期初經費設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">管考項目設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫結案管理</div>
+								</a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處彙整</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                        <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位主管簽核</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">所/處簽核</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-grid"></i>
+							</div>
+							<div class="menu-text">院內研究計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫審查管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">審查作業</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">期初經費設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">管考項目設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫列管分類管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫結案管理</div>
+								</a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處彙整</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位主管簽核</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">所/處簽核</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-table"></i>
+							</div>
+							<div class="menu-text">院外研究計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫登錄管理(學發處)</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">執行項目管理(學發處)</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫資料變更管理(學發處)</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檢視/結案管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">簽核歷程紀錄 <span class="menu-label">NEW</span></div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-layers"></i>
+							</div>
+							<div class="menu-text">產學合作計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檢視/結案管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-list"></i>
+							</div>
+							<div class="menu-text">學研合作計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檢視/結案管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-diamond"></i>
+							</div>
+							<div class="menu-text">計畫經費管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位經費核定管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">統籌科目金額設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">統籌科目核定管理功能</div>
+								</a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處彙整</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位主管簽核</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">所/處簽核</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">經費轉出 <i class="fas fa-lg fa-fw me-10px fa-right-left text-theme"></i></div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">院內計畫經費轉出至會計系統</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">院外計畫經費轉出至會計系統</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">計畫經費執行數轉入計管系統</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">經費核撥比例設定及預算數調整</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-chart"></i>
+							</div>
+							<div class="menu-text">單位報告</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">年度單位報告 <span class="menu-label">NEW</span></div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學發處彙整</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-calendar"></i>
+							</div>
+							<div class="menu-text">跨年度計畫查詢</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">個人計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">全院計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">院內計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">院外計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">產學合作計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學研合作計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">個人歷史計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位歷史計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">全院歷史計畫查詢</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-settings"></i>
+							</div>
+							<div class="menu-text">業務管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫流程開放設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫開解鎖設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫KPI管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">會計科目管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位彙整人設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫管理人設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">審查委員管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">人員計畫百分比管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫編號調整</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫資料變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檔案下載</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">綱要計畫資料管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-chart-pie"></i>
+							</div>
+							<div class="menu-text">統計報表</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">計畫報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">進度報表</div>
+								</a>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">經費報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">計畫人員列表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">制式及彙整報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">計畫主持人、登錄人</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">KPI彙整報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">院外研究計畫報表</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">產學合作計畫報表</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學研合作計畫報表</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">自訂報表</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-cogs"></i>
+							</div>
+							<div class="menu-text">CV 管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">基本資料維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學經歷維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">研究資訊維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">Publication 管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">專利資料維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">Attachments 管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">產出PDF功能</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-pencil-alt"></i>
+							</div>
+							<div class="menu-text">審查管理 <span class="menu-label">NEW</span></div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">聘審作業</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學術評鑑作業</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">評審委員維護管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-key"></i>
+							</div>
+							<div class="menu-text">系統管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位組織維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">角色權限維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">帳號管理維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">系統代碼維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">系統參數維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">系統功能維護管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+                    <hr/>
+
+					<!-- BEGIN minify-button -->
+					<div class="menu-item d-flex">
+						<a href="javascript:;" class="app-sidebar-minify-btn ms-auto d-flex align-items-center text-decoration-none" data-toggle="app-sidebar-minify"><i class="fa fa-angle-double-left"></i></a>
+					</div>
+					<!-- END minify-button -->
+					
+				</div>
+				<!-- END menu -->
+			</div>
+			<!-- END scrollbar -->
+		</div>
+		<div class="app-sidebar-bg" data-bs-theme="dark"></div>
+		<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a></div>
+		<!-- END #sidebar -->
+		
+		<!-- BEGIN #content -->
+		<div id="content" class="app-content">
+			<!-- BEGIN breadcrumb -->
+			<ol class="breadcrumb float-xl-end">
+				<li class="breadcrumb-item"><a href="javascript:;">首頁</a></li>
+				<li class="breadcrumb-item active">儀表板</li>
+			</ol>
+			<!-- END breadcrumb -->
+			<!-- BEGIN page-header -->
+			<h1 class="page-header">儀表板 <small>2023-09-01(五) <span id="time"></span></small></h1>
+			<!-- END page-header -->
+
+			<!-- BEGIN row -->
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="widget widget-stats bg-teal">
+						<div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
+						<div class="stats-content">
+							<div class="stats-title">計畫總數</div>
+							<div class="stats-number">521 <small class="before">(前一月: 579)</small></div>
+							<div class="stats-progress progress">
+								<div class="progress-bar" style="width: 83.22%;"></div>
+							</div>
+							<div class="mb-3 text-gray-500"><span data-animation="number" data-value="83.22">0.00</span>%</div>
+							<div class="stats-desc">去年辦理計畫數: 1,537</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="widget widget-stats bg-blue">
+						<div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
+						<div class="stats-content">
+							<div class="stats-title">新增計畫數</div>
+							<div class="stats-number">21 <small class="before">(前一月: 15)</small></div>
+							<div class="stats-progress progress">
+								<div class="progress-bar" style="width: 53.91%;"></div>
+							</div>
+							<div class="mb-3 text-gray-500"><span data-animation="number" data-value="53.91">0.00</span>%</div>
+                            <div class="stats-desc">月平均新增計畫數: 17</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="widget widget-stats bg-indigo">
+						<div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
+						<div class="stats-content">
+							<div class="stats-title">待簽核計畫數</div>
+							<div class="stats-number">36 <small class="before">(前一月: 24)</small></div>
+							<div class="stats-progress progress">
+								<div class="progress-bar" style="width: 73.91%;"></div>
+							</div>
+							<div class="mb-3 text-gray-500"><span data-animation="number" data-value="73.91">0.00</span>%</div>
+							<div class="stats-desc">月平均待簽核計畫數: 537</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="widget widget-stats bg-orange">
+						<div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
+						<div class="stats-content">
+							<div class="stats-title">評鑑作業案件數</div>
+							<div class="stats-number">121 <small class="before">(前一月: 169)</small></div>
+							<div class="stats-progress progress">
+								<div class="progress-bar" style="width: 63.91%;"></div>
+							</div>
+							<div class="mb-3 text-gray-500"><span data-animation="number" data-value="63.91">0.00</span>%</div>
+							<div class="stats-desc">月平均待評鑑計畫數: 537</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END row -->
+
+
+			<!-- BEGIN row -->
+			<div class="row">
+				<!-- BEGIN col-8 -->
+				<div class="col-xl-8 col-lg-6">
+					<div class="card border-0 mb-3 overflow-hidden">
+						<div class="card-body p-0">
+							<!-- BEGIN tabs -->
+                            <ul class="nav nav-tabs nav-tabs-inverse nav-justified" data-sortable-id="index-2">
+                                <li class="nav-item"><a href="#latest-post" data-bs-toggle="tab" class="nav-link active"><i class="fas fa-rectangle-list fa-lg fa-fw me-5px"></i> <span class="d-none d-md-inline">最新公告</span></a></li>
+                                <li class="nav-item"><a href="#purchase" data-bs-toggle="tab" class="nav-link"><i class="fa fa-archive fa-lg me-5px"></i> <span class="d-none d-md-inline">文件表單</span></a></li>
+                                <li class="nav-item"><a href="#email" data-bs-toggle="tab" class="nav-link"><i class="fas fa-lg fa-fw me-5px fa-puzzle-piece"></i> <span class="d-none d-md-inline">軟體資源</span></a></li>
+                            </ul>
+                            <div class="tab-content panel rounded-0 rounded-bottom mb-20px" data-sortable-id="index-3">
+                                <div class="tab-pane fade active show" id="latest-post">
+                                    <div class="h-350px p-3" data-scrollbar="true">
+                                        <div class="d-sm-flex">
+                                            <a href="javascript:;" class="w-sm-200px">
+                                                <i class="fas fa-lg fa-fw me-10px fa-bookmark" style="position:absolute;left:20px;color:rgb(161, 4, 4);"></i>
+                                                <img class="mw-100 rounded" src="../index_list/news-1o.jpg" alt="" />
+                                            </a>
+                                            <div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+                                                <h5>國家衛生研究院 113年度4項合作計畫徵求</h5>
+                                                <p class="time">2023/8/11</p>
+                                                政府推動「長照十年計畫2.0」提供從支持家庭、居家、社區到住宿式照顧之多元連續服務，建立以社區為基礎的照顧型社區，並創新高齡醫療與照護服務模式。爰此，行政院於109年指示國衛院擔任「高齡醫學暨健康福祉研究中心」主責單位，並依計畫徵求及管理相關研究計畫。
+                                            </div>
+                                        </div>
+                                        <hr class="bg-gray-500" />
+                                        <div class="d-sm-flex">
+                                            <a href="javascript:;" class="w-sm-200px">
+                                                <img class="mw-100 rounded" src="../index_list/news-3o.jpg" alt="" />
+                                            </a>
+                                            <div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+                                                <h5>國家環境醫學研究所 學術演講</h5>
+                                                <p class="time">2023/9/1</p>
+                                                講題: Environmental Determinants and Childhood Asthma<br/>
+                                                講者：Yueh-Ying Han<br/>
+                                                日期時間：2023/9/12 上午10:00~11:30
+                                            </div>
+                                        </div>
+                                        <hr class="bg-gray-500" />
+                                        <div class="d-sm-flex">
+                                            <a href="javascript:;" class="w-sm-200px">
+                                                <img class="mw-100 rounded" src="../index_list/news-2o.jpg" alt="" />
+                                            </a>
+                                            <div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+                                                <h5>2023年台灣醫學黴菌培訓網研討會歡迎報名</h5>
+                                                <p class="time">2023/8/22</p>
+                                                財團法人謝維銓教授感染醫學文教基金會訂於8月26-27日辦理2023年台灣醫學黴菌培訓網研討會「醫學黴菌培訓網」之目的為加強臨床與實驗室的溝通以及提升實驗室檢驗及研究品質，將於7月下旬8月初開放報名，相關公告及報名網站：http://www.taiwanmmtn.org/
+                                            </div>
+                                        </div>
+                                        <hr class="bg-gray-500" />
+                                        <div class="d-sm-flex">
+                                            <a href="javascript:;" class="w-sm-200px">
+                                                <img class="mw-100 rounded" src="../assets/img/gallery/gallery-8.jpg" alt="" />
+                                            </a>
+                                            <div class="flex-1 ps-sm-3 pt-3 pt-sm-0">
+                                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor accumsan rutrum.</h5>
+                                                Fusce augue diam, vestibulum a mattis sit amet, vehicula eu ipsum. Vestibulum eu mi nec purus tempor consequat. Vestibulum porta non mi quis cursus. Fusce vulputate cursus magna, tincidunt sodales ipsum lobortis tincidunt. Mauris quis lorem ligula. Morbi placerat est nec pharetra placerat. Ut laoreet nunc accumsan orci aliquam accumsan. Maecenas volutpat dolor vitae sapien ultricies fringilla. Suspendisse vitae orci sed nibh ultrices tristique. Aenean in ante eget urna semper imperdiet. Pellentesque sagittis a nulla at scelerisque.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="purchase">
+                                    <div class="h-350px" data-scrollbar="true">
+                                        <table class="table table-panel mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>發布日期</th>
+                                                    <th>標題</th>
+                                                    <th>發布單位</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/2/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><i class="fas fa-lg fa-fw fa-bookmark" style="color:rgb(161, 4, 4);"></i><a href="javascript:;" class="text-decoration-none">國家衛生研究院計畫管理系統－系統操作手冊 v4.1 版更新</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">資訊室</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/7/31</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">先導化合物與候選發展藥物評估服務核心設施開放使用－申請表單與使用手冊下載</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="email">
+                                    <div class="h-350px" data-scrollbar="true">
+                                        <table class="table table-panel mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>發布日期</th>
+                                                    <th>標題</th>
+                                                    <th>發布單位</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/2/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><i class="fas fa-lg fa-fw fa-bookmark" style="color:rgb(161, 4, 4);"></i><a href="javascript:;" class="text-decoration-none">國家衛生研究院計畫管理系統－系統操作手冊 v4.1 版更新</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">資訊室</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">e-Learning 線上學習系統 <i class="fas fa-lg fa-fw me-10px fa-link"></i></a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/7/31</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">先導化合物與候選發展藥物評估服務核心設施開放使用－申請表單與使用手冊下載</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="fw-bold text-muted">2023/8/11</td>
+                                                    <td class="text-nowrap">
+                                                        <h6><a href="javascript:;" class="text-decoration-none">辦理計畫標準文件範本 (2023版本)</a></h6>
+                                                    </td>
+                                                    <td class="text-nowrap"><a href="javascript:;" class="text-dark text-decoration-none">學發處</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END tabs -->
+
+						</div>
+                        <!--div class="card-footer text-center"><button type="button" class="btn btn-outline-primary me-1 mb-1">檢視全部</button></div-->
+
+					</div>
+
+				</div>
+				<!-- END col-8 -->
+				<!-- BEGIN col-4 -->
+				<div class="col-xl-4">
+					<!-- BEGIN panel -->
+					<div class="card border-0 mb-3 overflow-hidden">
+						<div class="card-body">
+							<div id="schedule-calendar" class="datepickk"></div>
+							<hr class="m-0 bg-gray-500" />
+							<div class="list-group list-group-flush">
+								<a href="javascript:;" class="list-group-item list-group-item-action d-flex justify-content-left align-items-center text-ellipsis rounded-bottom">
+									<span class="badge bg-green fs-10px">研究計畫</span>
+									<em>14:00</em>｜計畫專業審查委員評分說明會議
+								</a>
+								<a href="javascript:;" class="list-group-item list-group-item-action d-flex justify-content-left align-items-center text-ellipsis rounded-bottom">
+									<span class="badge bg-blue fs-10px">院內計畫</span>
+									<em>15:00</em>｜委員評分確認會議
+								</a>
+							</div>
+                            <!--div class="card-footer text-center"><button type="button" class="btn btn-outline-primary me-1 mb-1">檢視全部</button></div-->
+						</div>
+					</div>
+					<!-- END panel -->
+				</div>
+				<!-- END col-4 -->
+			</div>
+			<!-- END row -->
+
+			<!-- BEGIN #footer -->
+			<div id="footer" class="app-footer m-0">
+				財團法人國家衛生研究院版權所有 &copy; 2023 NHRI All Rights Reserved.
+			</div>
+			<!-- END #footer -->
+	
+		</div>
+		<!-- END #content -->
+		
+		<!-- BEGIN scroll-top-btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- END scroll-top-btn -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="../assets/js/vendor.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="../assets/plugins/d3/d3.min.js"></script>
+	<script src="../assets/plugins/nvd3/build/nv.d3.min.js"></script>
+	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="../assets/plugins/jvectormap-content/world-mill.js"></script>
+	<script src="../assets/plugins/datepickk/dist/datepickk.min.js"></script>
+	<script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
+	<script src="../assets/js/demo/pos-header.demo.js"></script>
+	<script src="../assets/plugins/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="../assets/plugins/moment/min/moment.min.js"></script>
+	<script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="../assets/js/demo/dashboard-demo.js"></script>
+	<script src="../assets/js/demo/dashboard-demo2.js"></script>
+	<!-- ================== END page-js ================== -->
+
+
+</body>
+</html>
+<script>
+
+</script>

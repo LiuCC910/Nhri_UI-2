@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>國家衛生研究院－計畫管理系統</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+	<!-- ================== BEGIN page-css ================== -->
+	<link href="../assets/plugins/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+	<link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/intro.js/minified/introjs.min.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
+
+	<!-- 客製化CSS暫用 -->
+	<link href="../assets/css/customize.css" rel="stylesheet" />
+	<link href="../favicon.png" rel="icon" type="image/x-icon">
+</head>
+<body>
+	<!-- BEGIN #loader -->
+	<div id="loader" class="app-loader">
+		<span class="spinner"></span>
+	</div>
+	<!-- END #loader -->
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-header-fixed app-sidebar-fixed">
+		<!-- BEGIN #header -->
+		<div id="header" class="app-header">
+			<!-- BEGIN navbar-header -->
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand"><img src="../index_list/logo_nhri.png"> <b class="me-3px"> 國家衛生研究院 ::計畫管理系統::</b></a>
+				<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- END navbar-header -->
+			<!-- BEGIN header-nav -->
+			<div class="navbar-nav">
+                <span>
+                    <span class="d-none d-md-inline">2023-09-01 09:00 於 100.10.9.147 第 1001 次登入</span>
+                </span>
+				<div class="navbar-item dropdown">
+                    <a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
+						<i class="fa fa-bell"></i>
+						<span class="badge">2</span>
+					</a>
+					<div class="dropdown-menu media-list dropdown-menu-end">
+						<div class="dropdown-header">系統訊息 (2)</div>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-bug media-object bg-gray-500"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">5分鐘後即將自動登出 <i class="fa fa-exclamation-circle text-danger"></i></h6>
+								<div class="text-muted fs-10px">1 分鐘前</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-bug media-object bg-gray-500"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">密碼即將到期提醒</h6>
+								<p>每30天請更換一次密碼，且不可以與前三次使用過之密碼相同。提醒您記得儘早更換。</p>
+								<div class="text-muted fs-10px">2023-09-01 10:00</div>
+							</div>
+						</a>
+						<div class="dropdown-footer text-center">
+							<a href="javascript:;" class="text-decoration-none">看全部</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="navbar-item navbar-user dropdown">
+					<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+						<img src="../assets/img/user/user-4.png" alt="" /> 
+						<span>
+							<span class="d-none d-md-inline">Admin, 凌網(hyweb)</span>
+							<b class="caret"></b>
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end me-1">
+						<a href="extra_profile.html" class="dropdown-item">編輯個人資料</a>
+						<a href="settings.html" class="dropdown-item">個人設定</a>
+						<div class="dropdown-divider"></div>
+						<a href="login.html" class="dropdown-item">登出</a>
+					</div>
+				</div>
+			</div>
+			<!-- END header-nav -->
+		</div>
+		<!-- END #header -->
+	
+		<!-- BEGIN #sidebar --><!--左側共用MENU項目-->
+		<div id="sidebar" class="app-sidebar app-sidebar-transparent" data-bs-theme="dark">
+			<!-- BEGIN scrollbar -->
+			<div class="app-sidebar-content nhri" data-scrollbar="true" data-height="100%">
+				<!-- BEGIN menu -->
+				<div class="menu">
+					<div class="menu-profile">
+						<a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
+							<div class="menu-profile-cover with-shadow"></div>
+							<div class="menu-profile-info">
+								<div class="d-flex align-items-center">
+									<div class="flex-grow-1">
+										系統服務/下載
+									</div>
+									<div class="menu-caret ms-auto"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="appSidebarProfileMenu" class="collapse">
+						<div class="menu-item pt-5px">
+							<a href="javascript:;" class="menu-link">
+								<div class="menu-icon"><i class="icon-docs"></i></div>
+								<div class="menu-text"> 文件及表單</div>
+							</a>
+						</div>
+						<div class="menu-item pb-5px">
+							<a href="javascript:;" class="menu-link">
+								<div class="menu-icon"><i class="fab fa-simplybuilt"></i></div>
+								<div class="menu-text"> e-Learning</div>
+							</a>
+						</div>
+						<div class="menu-item pb-5px">
+							<a href="javascript:;" class="menu-link">
+								<div class="menu-icon"><i class="fa fa-question-circle"></i></div>
+								<div class="menu-text"> 相關軟體資源</div>
+							</a>
+						</div>
+						<div class="menu-divider m-0"></div>
+					</div>
+					<div class="menu-header">功能選單</div>
+					<div class="menu-item">
+						<a href="#" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-screen-desktop"></i>
+							</div>
+							<div class="menu-text">儀表板</div>
+							<div class="menu-badge bg-success">2</div>
+						</a>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-sitemap"></i>
+							</div>
+							<div class="menu-text">單位規劃</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link"><div class="menu-text">單位規劃</div></a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位規劃檢視</div>
+									<div class="menu-caret"></div>
+								</a>
+								<div class="menu-submenu">
+									<div class="menu-item">
+										<a href="#" class="menu-link">
+											<div class="menu-text">單位彙整人/主管</div>
+										</a>
+									</div>
+									<div class="menu-item">
+										<a href="#" class="menu-link">
+											<div class="menu-text">學發處</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link"><div class="menu-text">單位主管簽核</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link"><div class="menu-text">學發處彙整</div></a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-list-ol"></i>
+							</div>
+							<div class="menu-text">院內行政計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">期初經費設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">管考項目設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫結案管理</div>
+								</a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處彙整</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                        <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位主管簽核</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">所/處簽核</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-grid"></i>
+							</div>
+							<div class="menu-text">院內研究計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫審查管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">審查作業</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">期初經費設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">管考項目設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫列管分類管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫結案管理</div>
+								</a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處彙整</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位主管簽核</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">所/處簽核</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-table"></i>
+							</div>
+							<div class="menu-text">院外研究計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item active">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫登錄管理(學發處)</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">執行項目管理(學發處)</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫資料變更管理(學發處)</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檢視/結案管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">簽核歷程紀錄 <span class="menu-label">NEW</span></div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-layers"></i>
+							</div>
+							<div class="menu-text">產學合作計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檢視/結案管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-list"></i>
+							</div>
+							<div class="menu-text">學研合作計畫</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫總覽</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫研提</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫執行與管考</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檢視/結案管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-diamond"></i>
+							</div>
+							<div class="menu-text">計畫經費管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位經費核定管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">統籌科目金額設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">統籌科目核定管理功能</div>
+								</a>
+							</div>
+							<div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處彙整</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位主管簽核</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">所/處簽核</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">經費轉出 <i class="fas fa-lg fa-fw me-10px fa-right-left text-theme"></i></div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">院內計畫經費轉出至會計系統</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">院外計畫經費轉出至會計系統</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">計畫經費執行數轉入計管系統</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">經費核撥比例設定及預算數調整</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-chart"></i>
+							</div>
+							<div class="menu-text">單位報告</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">年度單位報告 <span class="menu-label">NEW</span></div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位彙整</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">主管簽核</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學發處彙整</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-calendar"></i>
+							</div>
+							<div class="menu-text">跨年度計畫查詢</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">個人計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">全院計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">院內計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">院外計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">產學合作計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學研合作計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">個人歷史計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位歷史計畫查詢</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">全院歷史計畫查詢</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="icon-settings"></i>
+							</div>
+							<div class="menu-text">業務管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫流程開放設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫開解鎖設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫KPI管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">會計科目管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位彙整人設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫管理人設定</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">審查委員管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">人員計畫百分比管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫編號調整</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫資料變更</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">計畫檔案下載</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">綱要計畫資料管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-chart-pie"></i>
+							</div>
+							<div class="menu-text">統計報表</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">計畫報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">進度報表</div>
+								</a>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">經費報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">計畫人員列表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">制式及彙整報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">計畫主持人、登錄人</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="menu-item has-sub">
+								<a href="javascript:;" class="menu-link">
+									<div class="menu-text">KPI彙整報表</div>
+                                    <div class="menu-caret"></div>
+								</a>
+                                <div class="menu-submenu">
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">單位彙整人、主管</div>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a href="#" class="menu-link">
+                                            <div class="menu-text">學發處</div>
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">院外研究計畫報表</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">產學合作計畫報表</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學研合作計畫報表</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">自訂報表</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-cogs"></i>
+							</div>
+							<div class="menu-text">CV 管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">基本資料維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學經歷維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">研究資訊維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">Publication 管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">專利資料維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">Attachments 管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">產出PDF功能</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub active">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-pencil-alt"></i>
+							</div>
+							<div class="menu-text text-yellow">審查管理 <span class="menu-label">NEW</span></div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item active">
+								<a href="#" class="menu-link">
+									<div class="menu-text">聘審作業</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">學術評鑑作業</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">評審委員維護管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-key"></i>
+							</div>
+							<div class="menu-text">系統管理</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">單位組織維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">角色權限維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">帳號管理維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">系統代碼維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">系統參數維護管理</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="#" class="menu-link">
+									<div class="menu-text">系統功能維護管理</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+                    <hr/>
+
+					<!-- BEGIN minify-button -->
+					<div class="menu-item d-flex">
+						<a href="javascript:;" class="app-sidebar-minify-btn ms-auto d-flex align-items-center text-decoration-none" data-toggle="app-sidebar-minify"><i class="fa fa-angle-double-left"></i></a>
+					</div>
+					<!-- END minify-button -->
+					
+				</div>
+				<!-- END menu -->
+			</div>
+			<!-- END scrollbar -->
+		</div>
+		<div class="app-sidebar-bg" data-bs-theme="dark"></div>
+		<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a></div>
+		<!-- END #sidebar -->
+		
+		<!-- BEGIN #content -->
+		<div id="content" class="app-content">
+			<!-- BEGIN breadcrumb -->
+			<ol class="breadcrumb float-xl-end">
+				<li class="breadcrumb-item"><a href="javascript:;">首頁</a></li>
+				<li class="breadcrumb-item"><a href="javascript:;">審查管理</a></li>
+				<li class="breadcrumb-item active">聘審作業</li>
+			</ol>
+			<!-- END breadcrumb -->
+			<!-- BEGIN page-header -->
+			<h1 class="page-header">聘審作業 <small><a class="" href="javascript:void(0);" title="點選開啟頁面提示"><i class="fa fa-comment-alt fa-fw"></i></a></small></h1>
+			<!-- END page-header -->
+            <div class="row">
+				<div class="col-xl-12">
+						<!-- BEGIN alert -->
+						<div class="alert alert-info alert-dismissible rounded-0 mb-0 fade show">
+							<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+							審查作業類型包含：聘審及學術評鑑2類。此2類審查作業之標準化審查管理系統及評審委員之新建、維護、分派、審核機制，依據各類審查作業之不同性質，提供特定功能以確保符合其業務需求。
+						</div>
+						<!-- END alert -->
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="dt-buttons btn-group flex-wrap">
+                        <button class="btn btn-secondary btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button"><span>批次分派</span></button> 
+                        <button class="btn btn-secondary btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button"><span>批次匯出</span></button> 
+                    </div>
+                </div>
+                <div class="col-xl-6 text-end">
+                    <div class="dt-buttons btn-group flex-wrap">
+                        <button class="btn btn-primary btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button"><i class="fas fa-circle-plus"></i> <span>新增登錄</span></button> 
+                        <button class="btn btn-outline-primary btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button"><i class="fab fa-searchengin"></i><span>欄位查詢</span></button> 
+                    </div>
+
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <!-- BEGIN col-10 -->
+				<div class="col-xl-12">
+                        <div class="card data-table">
+                            <div class="card-body p-0">
+                                <!-- BEGIN table -->
+                                <table id="data-table-default" class="table table-striped table-bordered align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th width="1%">&nbsp;</th>
+                                            <th width="1%" data-orderable="false">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </th>
+                                            <th class="text-nowrap">年度</th>
+                                            <th class="text-nowrap">類別</th>
+                                            <th class="text-nowrap">編號</th>
+                                            <th class="text-nowrap">計畫名稱</th>
+                                            <th class="text-nowrap">執行機構</th>
+                                            <th class="text-nowrap">主持人</th>
+                                            <th class="text-nowrap">登錄人</th>
+                                            <th class="text-nowrap">計畫狀態</th>
+                                            <th class="text-nowrap" data-orderable="false">管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX">
+                                            <td width="1%" class="fw-bold">1</td>
+                                            <td width="1%">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input disabled" data-checked="email-checkbox" id="emailCheckbox1" disabled>
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10802NI</td>
+                                            <td><a href="#" class="text-decoration-none">探討大腦印記體的機轉功能:提供精神及神經疾病新治療策略</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>黃憲松</td>
+                                            <td>陳正明</td>
+                                            <td>
+                                                <span class="badge bg-default text-gray-900">填報中</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td width="1%" class="fw-bold">2</td>
+                                            <td width="1%">
+                                                <span class="text-gray-700"><i class="fas fa-lg fa-fw fa-lock"></i></span>
+                                                <!--div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div-->
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10803NI</td>
+                                            <td><a href="#" class="text-decoration-none">腦疾病的研究:雙核造血神經元的形成、特徵、角色</a></td>
+                                            <td>中國醫藥大學</td>
+                                            <td>賴威達</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-warning">
+                                                    委員審核中
+                                                </span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle disabled"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td width="1%" class="fw-bold">3</td>
+                                            <td width="1%">
+                                                <span class="text-gray-700"><i class="fas fa-lg fa-fw fa-lock"></i></span>
+                                                <!--div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div-->
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10805PI</td>
+                                            <td><a href="#" class="text-decoration-none">結合流行病學與基因體資訊研究台灣抗藥性結核病之發生與傳播</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>林先和</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-warning">
+                                                    委員審核中
+                                                </span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle disabled"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td width="1%" class="fw-bold">4</td>
+                                            <td width="1%">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1" disabled>
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>子計畫</td>
+                                            <td>EX112-10802NI</td>
+                                            <td><a href="#" class="text-decoration-none">探討大腦印記體功能:提供精神及神經疾病的新治療策略</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>黃憲松</td>
+                                            <td>陳正明</td>
+                                            <td>
+                                                <span class="badge bg-default text-gray-900">填報中</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td width="1%" class="fw-bold">5</td>
+                                            <td width="1%">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10803NI</td>
+                                            <td><a href="#" class="text-decoration-none">腦疾病的研究:雙核造血神經元的形成、特徵、角色</a></td>
+                                            <td>中國醫藥大學</td>
+                                            <td>賴威達</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-lime">待分派評審</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle disabled"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td width="1%" class="fw-bold">6</td>
+                                            <td width="1%">
+                                                <!--span class="text-gray-700"><i class="fas fa-lg fa-fw fa-lock"></i></span-->
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10805PI</td>
+                                            <td><a href="#" class="text-decoration-none">結合流行病學與基因體資訊研究台灣抗藥性結核病之發生與傳播</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>林先和</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-lime">待分派評審</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle disabled"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td width="1%" class="fw-bold">7</td>
+                                            <td width="1%">
+                                                <span class="text-gray-700"><i class="fas fa-lg fa-fw fa-lock"></i></span>
+                                                <!--div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div-->
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10805PI</td>
+                                            <td><a href="#" class="text-decoration-none">結合流行病學與基因體資訊研究台灣抗藥性結核病之發生與傳播</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>林先和</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-warning">
+                                                    委員審核中
+                                                </span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-danger btn-icon btn-circle disabled"><i class="fa fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td width="1%" class="fw-bold">8</td>
+                                            <td width="1%">
+                                                <!--span class="text-gray-700"><i class="fas fa-lg fa-fw fa-lock"></i></span-->
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10805PI</td>
+                                            <td><a href="#" class="text-decoration-none">結合流行病學與基因體資訊研究台灣抗藥性結核病之發生與傳播</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>林先和</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-info"><i class="fas fa-1"></i>
+                                                    會議審查</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-info btn-icon btn-circle"><i class="far fa-eye fa-fw"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td width="1%" class="fw-bold">9</td>
+                                            <td width="1%">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10802NI</td>
+                                            <td><a href="#" class="text-decoration-none">探討大腦印記體的機轉與功能:提供精神及神經疾病的新治療策略</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>黃憲松</td>
+                                            <td>陳正明</td>
+                                            <td>
+                                                <span class="badge bg-secondary text-gray-300">已核定</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-info btn-icon btn-circle"><i class="far fa-eye fa-fw"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td width="1%" class="fw-bold">10</td>
+                                            <td width="1%">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10803NI</td>
+                                            <td><a href="#" class="text-decoration-none">腦疾病的研究:雙核造血神經元的形成、特徵、角色</a></td>
+                                            <td>中國醫藥大學</td>
+                                            <td>賴威達</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-info"><i class="fas fa-2"></i>
+                                                    會議審查</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-info btn-icon btn-circle"><i class="far fa-eye fa-fw"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td width="1%" class="fw-bold">11</td>
+                                            <td width="1%">
+                                                <!--span class="text-gray-700"><i class="fas fa-lg fa-fw fa-lock"></i></span-->
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" data-checked="email-checkbox" id="emailCheckbox1">
+                                                    <label class="form-check-label" for="emailCheckbox1"></label>
+                                                </div>
+                                            </td>
+                                            <td>112年</td>
+                                            <td>主計畫</td>
+                                            <td>EX112-10805PI</td>
+                                            <td><a href="#" class="text-decoration-none">結合流行病學與基因體資訊研究台灣抗藥性結核病之發生與傳播</a></td>
+                                            <td>國立臺灣大學</td>
+                                            <td>林先和</td>
+                                            <td>黃小明</td>
+                                            <td>
+                                                <span class="badge bg-info"><i class="fas fa-3"></i>
+                                                    會議審查</span>
+                                            </td>
+                                            <td class="text-nowrap">
+                                                <a href="javascript:;" class="btn btn-warning btn-icon btn-circle"><i class="fa fa-pencil-alt"></i></a>
+                                                <a href="javascript:;" class="btn btn-info btn-icon btn-circle"><i class="far fa-eye fa-fw"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- END table -->
+                            </div>
+                        </div>
+        
+				<!-- BEGIN hljs-wrapper -->
+				<div class="hljs-wrapper" style="display: none;">
+					<pre><code class="html" data-url="../assets/data/table-manage/default.json"></code></pre>
+				</div>
+				<!-- END hljs-wrapper -->
+				</div>
+				<!-- END col-10 -->
+
+            </div>
+
+		</div>
+		<!-- END #content -->
+		
+		<!-- BEGIN scroll-top-btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- END scroll-top-btn -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="../assets/js/vendor.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="../assets/plugins/d3/d3.min.js"></script>
+	<script src="../assets/plugins/nvd3/build/nv.d3.min.js"></script>
+	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="../assets/plugins/jvectormap-content/world-mill.js"></script>
+	<script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
+	<script src="../assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="../assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="../assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="../assets/js/demo/table-manage-default.demo.js"></script>
+	<script src="../assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
+	<script src="../assets/js/demo/render.highlight.js"></script>
+	<script src="../assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
+	<script src="../assets/js/demo/render.highlight.js"></script>
+	<script src="../assets/plugins/intro.js/minified/intro.min.js"></script>
+	<!-- ================== END page-js ================== -->
+
+
+</body>
+</html>
+<script>
+
+</script>

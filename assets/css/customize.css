@@ -1,0 +1,129 @@
+/*計畫管理系統用*/
+[data-bs-theme=dark] {
+    --bs-pos-sidebar-bg: #012353;
+    --bs-pos-sidebar-bg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    --bs-pos-sidebar-header-bg: #4e6985;
+    --bs-pos-sidebar-header-color: #FFFFFF;
+    --bs-pos-sidebar-header-back-btn-bg: #586f85;
+    --bs-pos-sidebar-header-nav-link-bg: #2a343d;
+    --bs-pos-sidebar-header-nav-link-color: #6c757d;
+    --bs-pos-sidebar-header-nav-link-active-bg: #2d353c;
+    --bs-pos-sidebar-header-nav-link-active-color: #FFFFFF;
+    --bs-pos-sidebar-footer-bg: #495057;
+    --bs-pos-sidebar-footer-color: #FFFFFF;
+    --bs-pos-sidebar-product-border-color: #6c757d;
+    --bs-pos-sidebar-product-confirmation-bg: rgba(45, 53, 60, 0.95);
+    --bs-app-sidebar-bg: #011f4d;
+    --bs-app-sidebar-bg: linear-gradient(0deg, rgba(1,53,112,1) 0%, rgba(1,31,77,1) 19%, rgba(1,0,23,1) 90%);
+}
+
+.card-footer.text-center button {margin:0;}
+.card-header {background-color: #003f87;color:#fff;}
+body #gritter-notice-wrapper {top: 3%;}
+body #gritter-notice-wrapper .gritter-item-wrapper {
+    background: 0 0;
+    background: #00000099;}
+body #gritter-notice-wrapper .gritter-item-wrapper .gritter-item p {line-height: 2;}
+.app-sidebar-content.nhri .menu {font-size: 1.25em;}
+.app-sidebar .menu .menu-item.active>.menu-link .menu-icon {color:#ffd900;}
+
+/*.login.login-v1 .login-container .login-body {
+    background-image: url(../../index_list/nhri_bg.png);
+    background-size: cover;
+    opacity: 0.9;
+}*/
+
+.login.login-v1 .login-container .login-body  {position: relative;}
+.login.login-v1 .login-container .login-body::before {
+    content: "";
+    display: block;
+    background-size: cover;
+    background-image: url(../../index_list/nhri_bg.png);
+    height: 300px;
+    width: 100%;
+    opacity: 0.35;
+    position: absolute;
+    /* 偏移值皆設為 0，讓僞元素跟父元素一樣大小 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.login.login-v1 .login-container .login-body .login-content {position: relative;}
+.login.login-v1 .login-container .login-body .login-content .form-control {
+    border-color: transparent;
+    background: #fff;
+    color: #333;
+}
+.login.login-v1 .login-container .login-body .login-content {color: #333;}
+.form-check-label {color:#ccc;}
+.login.login-v1 .login-container .login-body .login-content .form-check-input {background: #ccc;}
+
+.card.data-table{padding:5px 10px;}
+
+body{font-family: "微軟正黑體", "Microsoft JhengHei", Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "DFKai-SB", sans-serif;}
+.app-footer {padding: 10px 0;text-align: center;}
+
+
+/*Admin用*/
+.before {font-size: .5em; color: #666;}
+.card.data-table {font-size: 1.15em;}
+.card.data-table th:nth-child(4), .card.data-table td:nth-child(4) {display: none;}
+.card .badge {min-width: 75px; margin-right: 15px;}
+.widget-stats {min-height: 170px;}
+.chats .chats-item .message:before {top: 25%;}
+.chat-buttons.btn-group.flex-wrap {margin:15px;}
+.chat-buttons.btn-group.flex-wrap a {padding:5px 15px;background-color:#666;border:1px dotted #fff;}
+
+@media only screen and (max-width: 960px) {
+    .widget-stats .stats-number, .widget.widget-stats .stats-number small {display: none;}
+    .widget-stats {min-height: 135px;}
+}
+
+.pos .pos-sidebar .pos-sidebar-body {padding: 10px 15px;}
+.pos .data-table {width: 100%;font-size: 1.15em;}
+.pos .pos-header .time a.active {background: none;border-bottom: 3px solid #ccc !important;border-radius: 0;}
+.pos-header .time a.btn:hover {background-color: #666;border-radius: 0;}
+
+.review  {position:relative;}
+.review::before{
+    content: "";
+    display: block;
+    background-size: cover;
+    background-image: url(../../index_list/building.png);
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+    position: absolute;
+    /* 偏移值皆設為 0，讓僞元素跟父元素一樣大小 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bg-nhri {background-color: #012353 !important;}
+.text-decoration-none.disabled, .text-decoration-none.disabled:hover {cursor:not-allowed;color:#666;}
+/*.pos-content-container {background-color: #ececec;opacity: 0.5;}
+.pos .data-table {opacity:1;}*/
+.pos .data-table {background-color: #fff;opacity:1;}
+.pos .data-table td.title {font-weight: bold;font-size: 1.05em;}
+
+@media only screen and (max-width: 960px) {
+    .pos-content .w-200px{display: none;}
+    .pos .data-table th:nth-child(2), .pos .data-table td:nth-child(2) {display: none;}
+    .pos .data-table th:nth-child(3), .pos .data-table td:nth-child(3) {display: none;}
+    .pos-mobile-sidebar-toggler {bottom: 30%;}
+}
+
+@media (min-width: 992px) {
+    .pos.pos-with-header.pos-with-sidebar .pos-sidebar {height: calc(100% - 110px);}
+}
+
+figure {
+    margin: 0;
+    padding: 15px 20px;
+}
+
+.form-group.row {margin:5px 0 10px;}
+h2.page-title {font-size: 1.75em;padding: 0;}

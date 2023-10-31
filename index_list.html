@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI清單</title>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="index_list/list.css">
+	<link href="favicon.png" rel="icon" type="image/x-icon">
+</head>
+<body>
+
+    <div class="demo_wrap">
+        <h1>UI清單</h1>
+        <!--div class="btn_grp" style="float:right;">
+            <span id="current_time"></span>
+            <a href="https://github.com/LiuCC910/CMS_UI" class="btn">切版檔案更新請按此下載</a>
+        </div-->
+        <hr style="clear:both">
+        <div class="table_wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num">編號</th>
+                        <th>頁面</th>
+                        <th>檔案名稱／連結</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td class="text-left">管理端：登入</td>
+                        <td><a href="template_html/login.html" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>管理端：首頁（資訊儀錶板）</td>
+                        <td><a href="template_html/index.html" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>管理端：院外研究計畫＞計畫登錄管理</td>
+                        <td><a href="template_html/list_table.html" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>管理端：跨年度計畫查詢＞院內計畫查詢</td>
+                        <td><a href="template_html/list_project.html" target="_blank"></a></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>管理端：審查管理＞聘審作業</td>
+                        <td>
+                            <ol>
+                                <li>計畫清單：<a href="template_html/list_reviewCommittee.html" target="_blank"></a></li>
+                                <li>計畫清單(分派評審)：<a href="#" target="_blank"></a></li>
+                                <li>新建(計畫登錄)：<a href="template_html/cp_reviewCommittee.html" target="_blank"></a></li>
+                                <li>編修(初審複審)：<a href="template_html/cp_reviewCommittee-edit.html" target="_blank"></a></li>
+                            </ol>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>委員端</td>
+                        <td>
+                            <ol>
+                                <li>登入：<a href="template_html/login_review.html" target="_blank"></a></li>
+                                <li>首頁(條列頁)：<a href="template_html/review_home.html" target="_blank"></a></li>
+                                <li>審核(內頁)：<a href="#" target="_blank"></a></li>
+                                <li>審核(內頁Tablet View)：<a href="#" target="_blank"></a></li>
+                            </ol>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <script>
+            var date = document.lastModified;
+            document.write("Last Modified: "+date);
+        </script>
+        </div>
+
+
+
+    </div>
+    <a href="#" class="scrollToTop" >回頁首</a>
+
+    <script src="index_list/jquery-3.3.1.min.js"></script>
+    <script src="index_list/jquery.easing.min.js"></script>
+    <!--script src="js/hyui.js"></script>
+    <script src="js/customize.js"></script-->
+    <script>
+        $(function() {
+            $('tbody').find('a').each(function(index, el) {
+                var Link = $(this).attr('href');
+                $(this).text(Link);
+            });
+        })
+    </script>
+</body>
+
+</html>

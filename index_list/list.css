@@ -47,9 +47,9 @@ table tr{
 table tr:hover{
     color:#111
 }
-table th,table td{
+table th, table td{
     padding:.5em .5em;
-    text-align:left;
+    text-align:center;
     font-size: 1.05em;
 }
 table th.main_data,table td.main_data{
@@ -231,7 +231,7 @@ table td span.gray{
 table th{
     background-color:#7b4397;
     color:#fff;
-    text-align:left;
+    text-align:center;
     white-space:nowrap;
     border-left:none;
     border-right:none
@@ -345,7 +345,7 @@ body {
 .demo_wrap h1 img { width: 260px }
 .num { min-width: 5%;}
 body { counter-reset: num }
-table { margin-bottom: 1em }
+table { margin-bottom: 1em;width: 100%; }
 table caption {
     text-align: left;
     font-weight: bold;
@@ -360,7 +360,7 @@ tbody tr td:first-child:before {
     content: counters(num, ".") " "
 }
 tbody tr td:nth-child(1) { max-width: 5% }
-tbody tr td:nth-child(2) { width: 30%; text-align: center; }
+tbody tr td:nth-child(2) { width: 30%;}
 
 .btn_grp{ text-align: right; }
 

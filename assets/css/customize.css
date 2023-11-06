@@ -127,3 +127,35 @@ figure {
 
 .form-group.row {margin:5px 0 10px;}
 h2.page-title {font-size: 1.75em;padding: 0;}
+
+
+.app.bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../index_list/hand-holding-tablet.png);
+    background-size: cover;
+    background-position: top;
+    background-position: right;
+}
+.app.bg img {
+    width: 465px;
+    margin: 15px 0 0 150px;
+}
+
+.app.bgtablet {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../index_list/tablet_Landscape.png);
+    background-size: cover;
+    background-position: top;
+    background-position: center;
+    text-align: center;
+}
+.app.bgtablet img {
+    width: 1049px;
+    position: relative;
+    top:100px;
+    left:-18px;
+}

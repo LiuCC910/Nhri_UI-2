@@ -189,6 +189,18 @@ h2.page-title {font-size: 1.75em;padding: 0;}
 .pos-content .table.reviewcontent th:nth-child(2),.pos-content .table.reviewcontent td:nth-child(2),.pos-content .table.reviewcontent th:nth-child(3),.pos-content .table.reviewcontent td:nth-child(3) {display: none;}
 .d-md-flex.mb-4{margin-bottom:10px;}
 }
+@media (max-width: 510px) and (max-width: 991px) {
+.pos-content .table.reviewcontent th:nth-child(6),.pos-content .table.reviewcontent td:nth-child(6),.pos-content .table.reviewcontent th:nth-child(7),.pos-content .table.reviewcontent td:nth-child(7) {display: none;}
+.pos-booking-title a {font-size: 1em;}
+.pos-mobile-sidebar-toggler {bottom: 5%;}
+.pos .pos-header .logo>a .logo-text {font-size: 14px;}
+.logo{width: 100% !important;}
+.navPortrait {display: block; width: 50%;}
+.time, .nav {display: none;}
+}
+@media (min-width: 511px) {
+.navPortrait {display: none;}
+}
 
 .tabletdirection {
     border-radius: 25px;

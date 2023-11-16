@@ -14,12 +14,19 @@
 	
 	<!-- ================== BEGIN page-css ================== -->
 	<link href="../assets/plugins/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+	<link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
 	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
 	<link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
 	<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 	<link href="../assets/plugins/intro.js/minified/introjs.min.css" rel="stylesheet" />
+	
+	
+	<link href="../assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/ion-rangeslider/css/ion.rangeSlider.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/tag-it/css/jquery.tagit.css" rel="stylesheet" />
+	<link href="../assets/plugins/spectrum-colorpicker2/dist/spectrum.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/select-picker/dist/picker.min.css" rel="stylesheet" />
 	<!-- ================== END page-css ================== -->
 
 	<!-- 客製化CSS暫用 -->
@@ -145,8 +152,30 @@
 						<div class="menu-divider m-0"></div>
 					</div>
 					<div class="menu-header">功能選單</div>
+					<!--DEMO的選單-->
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-star"></i>
+							</div>
+							<div class="menu-text">模擬DEMO用</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="index.html" class="menu-link"><div class="menu-text">首頁儀錶板</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="list_table.html" class="menu-link"><div class="menu-text">計畫清單</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="list_reviewCommittee.html" class="menu-link"><div class="menu-text">審查計畫清單</div></a>
+							</div>
+						</div>
+					</div>
+					<!--正式的選單-->
 					<div class="menu-item">
-						<a href="#" class="menu-link">
+						<a href="index.html" class="menu-link">
 							<div class="menu-icon">
 								<i class="icon-screen-desktop"></i>
 							</div>
@@ -378,7 +407,7 @@
 								</a>
 							</div>
 							<div class="menu-item active">
-								<a href="#" class="menu-link">
+								<a href="list_table.html" class="menu-link">
 									<div class="menu-text">計畫登錄管理(學發處)</div>
 								</a>
 							</div>
@@ -632,7 +661,7 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="#" class="menu-link">
+								<a href="list_project.html" class="menu-link">
 									<div class="menu-text">院內計畫查詢</div>
 								</a>
 							</div>
@@ -926,7 +955,7 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="#" class="menu-link">
+								<a href="list_reviewCommittee.html" class="menu-link">
 									<div class="menu-text">聘審作業</div>
 								</a>
 							</div>
@@ -1028,7 +1057,166 @@
                 </div>
             </div>
             <hr/>
-            <div class="row">
+            <div class="row" style="display:none;" id="advSearchDIV">
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2" for="fullname">計畫期程</label>
+						<div class="col-lg-10">
+							<div class="input-group input-daterange">
+								<input type="date" class="form-control" name="start" placeholder="Date Start">
+								<span class="input-group-text input-group-addon">至</span>
+								<input type="date" class="form-control" name="end" placeholder="Date End">
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2" for="projectyear">計畫年度</label>
+						<div class="col-lg-10">
+							<div class="input-group input-daterange">
+								<select class="form-select">
+									<option>請選擇年度</option>
+									<option>112</option>
+									<option>111</option>
+									<option>110</option>
+									<option>109</option>
+									<option>108</option>
+								</select>
+								<span class="input-group-text input-group-addon">至</span>
+								<select class="form-select">
+									<option>請選擇年度</option>
+									<option>112</option>
+									<option>111</option>
+									<option>110</option>
+									<option>109</option>
+									<option>108</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2"" for="projectyear">計畫類型</label>
+						<div class="col-lg-10">
+							<select class="form-select">
+								<option>請選擇類型</option>
+								<option>統合型計畫 TRG</option>
+								<option>創新研究計畫 IRG</option>
+								<option>研究發展獎助計畫 CDG</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2" for="projectyear">計畫類別</label>
+						<div class="col-lg-10">
+							<select class="form-select">
+								<option>請選擇類別</option>
+								<option>112</option>
+								<option>111</option>
+								<option>110</option>
+								<option>109</option>
+								<option>108</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">計畫編號</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" placeholder="請輸入計畫完整編號">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">中文計畫名稱</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" placeholder="請輸入關鍵字">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">中文摘要</label>
+						<div class="col-md-10">
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">執行單位</label>
+						<div class="col-lg-10">
+							<select class="selectpicker form-control" id="ex-search2" multiple>
+								<option value="1">PD 學術發展處</option>
+								<option value="2">LAC 實驗動物中心</option>
+								<option value="3">TTIC 技轉及育成中心</option>
+								<option value="4">NICR 癌症研究所</option>
+								<option value="5">單位名稱</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">單位主管</label>
+						<div class="col-lg-10">
+							<select class="selectpicker form-control" id="ex-search" multiple>
+								<option value="1">學發處－李誠蓁</option>
+								<option value="2">技轉及育成中心－王雅天</option>
+								<option value="3">楊建廷</option>
+								<option value="4">簡至能</option>
+								<option value="5">陳淑玲</option>
+								<option value="6">許文弘</option>
+								<option value="5">林曜宇</option>
+								<option value="6">林嘉宏</option>
+								<option value="5">張麗祥</option>
+								<option value="6">許文弘</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">計畫主持人</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" placeholder="請輸入姓名關鍵字">
+							<!--small class="fs-12px text-gray-500-darker">We'll never share your email with anyone else.</small-->
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">計畫登錄人</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" placeholder="請輸入姓名關鍵字">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2" for="projectyear">計畫狀態</label>
+						<div class="col-lg-10">
+							<select class="form-select">
+								<option>請選擇狀態</option>
+								<option>112</option>
+								<option>111</option>
+								<option>110</option>
+								<option>109</option>
+								<option>108</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">英文計畫名稱</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" placeholder="請輸入關鍵字">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="form-label col-form-label col-lg-2">英文摘要</label>
+						<div class="col-md-10">
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12">
+						<div class="form-group row text-center">
+							<div class="col-lg-12">
+								<button type="submit" class="btn btn-primary">查詢</button>
+								<button type="cancel" class="btn">重設</button>
+							</div>
+						</div>
+				</div>
+			</div>
+			<hr/>
+			<div class="row">
                 <div class="col-xl-6">
                     <div class="dt-buttons btn-group flex-wrap" data-step="2" 
                     data-intro="勾選資料後啟用，點選可進行批次刪除、簽核、匯出作業，簽核功能並會判斷帳號是否有簽核權限" 
@@ -1047,7 +1235,17 @@
                         data-intro="可開啟進階查詢，展開欄位各別輸入詳細查詢條件，更精準限縮查詢結果" 
                         data-hint="可開啟進階查詢，展開欄位各別輸入詳細查詢條件，更精準限縮查詢結果" 
                         data-hintPosition="top-middle" 
-                        data-position="bottom-right-aligned"><i class="fab fa-searchengin"></i><span>欄位查詢</span></button> 
+                        data-position="bottom-right-aligned" onclick="showFunction()"><i class="fab fa-searchengin"></i><span>欄位查詢</span></button> 
+						<script>
+							function showFunction() {
+							  var x = document.getElementById("advSearchDIV");
+							  if (x.style.display === "none") {
+								x.style.display = "flex";
+							  } else {
+								x.style.display = "none";
+							  }
+							}
+							</script>
                     </div>
 
                 </div>
@@ -1391,21 +1589,39 @@
 	<!-- ================== END core-js ================== -->
 	
 	<!-- ================== BEGIN page-js ================== -->
+	<script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
+	<script src="../assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
+
+	<script src="../assets/plugins/intro.js/minified/intro.min.js"></script>
+
 	<script src="../assets/plugins/d3/d3.min.js"></script>
 	<script src="../assets/plugins/nvd3/build/nv.d3.min.js"></script>
 	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
 	<script src="../assets/plugins/jvectormap-content/world-mill.js"></script>
-	<script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
+	
 	<script src="../assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
 	<script src="../assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 	<script src="../assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 	<script src="../assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-	<script src="../assets/js/demo/table-manage-default.demo.js"></script>
-	<script src="../assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
-	<script src="../assets/js/demo/render.highlight.js"></script>
-	<script src="../assets/plugins/intro.js/minified/intro.min.js"></script>
-	<!-- ================== END page-js ================== -->
+    
+	<script src="../assets/plugins/moment/min/moment.min.js"></script>
+	<script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+	<script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+	<script src="../assets/plugins/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+	<script src="../assets/plugins/jquery-migrate/dist/jquery-migrate.min.js"></script>
 
+	<script src="../assets/plugins/spectrum-colorpicker2/dist/spectrum.min.js"></script>
+	<script src="../assets/plugins/tag-it/js/tag-it.min.js"></script>
+	<script src="../assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+	<script src="../assets/plugins/clipboard/dist/clipboard.min.js"></script>
+	<script src="../assets/plugins/select2/dist/js/select2.min.js"></script>
+	<script src="../assets/plugins/select-picker/dist/picker.min.js"></script>
+
+	<script src="../assets/js/demo/form-plugins.demo.js"></script>
+	<script src="../assets/js/demo/render.highlight.js"></script>
+	<script src="../assets/js/demo/table-manage-default.demo.js"></script>
+	<!-- ================== END page-js ================== -->
 
 </body>
 </html>

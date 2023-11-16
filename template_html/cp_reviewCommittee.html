@@ -152,8 +152,30 @@
 						<div class="menu-divider m-0"></div>
 					</div>
 					<div class="menu-header">功能選單</div>
+					<!--DEMO的選單-->
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="fa fa-star"></i>
+							</div>
+							<div class="menu-text">模擬DEMO用</div>
+							<div class="menu-caret"></div>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="index.html" class="menu-link"><div class="menu-text">首頁儀錶板</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="list_table.html" class="menu-link"><div class="menu-text">計畫清單</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="list_reviewCommittee.html" class="menu-link"><div class="menu-text">審查計畫清單</div></a>
+							</div>
+						</div>
+					</div>
+					<!--正式的選單-->
 					<div class="menu-item">
-						<a href="#" class="menu-link">
+						<a href="index.html" class="menu-link">
 							<div class="menu-icon">
 								<i class="icon-screen-desktop"></i>
 							</div>
@@ -385,7 +407,7 @@
 								</a>
 							</div>
 							<div class="menu-item active">
-								<a href="#" class="menu-link">
+								<a href="list_table.html" class="menu-link">
 									<div class="menu-text">計畫登錄管理(學發處)</div>
 								</a>
 							</div>
@@ -639,7 +661,7 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="#" class="menu-link">
+								<a href="list_project.html" class="menu-link">
 									<div class="menu-text">院內計畫查詢</div>
 								</a>
 							</div>
@@ -933,7 +955,7 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item active">
-								<a href="#" class="menu-link">
+								<a href="list_reviewCommittee.html" class="menu-link">
 									<div class="menu-text">聘審作業</div>
 								</a>
 							</div>
@@ -1026,7 +1048,7 @@
                 </div>
                 <div class="col-xl-6 text-end">
                     <div class="dt-buttons btn-group flex-wrap">
-                        <button class="btn btn-primary btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button"><i class="icon-arrow-left"></i> <span>返回前頁</span></button> 
+                        <button class="btn btn-primary btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button" onclick="history.back()"><i class="icon-arrow-left"></i> <span>返回前頁</span></button> 
                     </div>
 
                 </div>
@@ -1202,7 +1224,9 @@
                 </div>
                 <hr style="clear: both; margin-top: 20px;"/>
                 <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary">編修儲存</button>
+                    <!--a href="#modal-dialog" class="btn btn-sm btn-success w-100px" data-bs-toggle="modal">Demo</a>
+					<a href="#modal-dialog" data-bs-toggle="modal" class="btn btn-primary">編修儲存</a-->
+					<button type="submit" class="btn btn-primary" onclick="window.location.href='cp_reviewCommittee-alert.html';">編修儲存</button>
                     <button type="cancel" class="btn">重設</button>
                 </div>
 
@@ -1210,7 +1234,47 @@
 
 		</div>
 		<!-- END #content -->
-		
+
+				<!-- #modal-dialog -->
+				<div class="modal fade" id="modal-dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">儲存送出</h4>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+							</div>
+							<div class="modal-body">
+								<p>
+									編修送出後將無法修改，若尚未完成請以草稿狀態儲存。<br/>
+									確定儲存送出？
+								</p>
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-white" data-bs-dismiss="modal">取消</a>
+								<a href="#modal-without-animation" class="btn btn-success" data-bs-toggle="modal">確定</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- #modal-without-animation -->
+				<div class="modal" id="modal-without-animation">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">儲存成功</h4>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+							</div>
+							<div class="modal-body">
+								儲存成功，計畫已送出。
+							</div>
+							<div class="modal-footer">
+								<a href="javascript:;" class="btn btn-white" data-bs-dismiss="modal" onclick="window.location.href='list_reviewCommittee.html';">關閉</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->

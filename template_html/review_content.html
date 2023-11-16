@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>國家衛生研究院－計畫評審系統</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+	<!-- ================== BEGIN page-css ================== -->
+	<link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+	<link href="../assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
+	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+	<link href="../assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
+
+	<link href="../assets/css/customize.css" rel="stylesheet" />
+	<link href="../favicon.png" rel="icon" type="image/x-icon">
+</head>
+<body class='pace-top'>
+	
+
+	<!-- BEGIN #loader -->
+	<div id="loader" class="app-loader">
+		<span class="spinner"></span>
+	</div>
+	<!-- END #loader -->
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-without-header app-without-sidebar">
+		
+			<!-- BEGIN #content -->
+			<div id="content" class="app-content p-0">
+				
+					<!-- BEGIN pos -->
+					<div class="pos pos-with-header pos-with-sidebar" id="pos">
+						<!-- BEGIN pos-header -->
+						<div class="pos-header text-white bg-nhri">
+							<div class="logo">
+								<a href="#">
+									<div class="logo-img"><img src="../index_list/logo_nhri_white.png"> </div>
+									<div class="logo-text text-white">國家衛生研究院計畫評審</div>
+								</a>
+							</div>
+							<div class="time">
+								<div class="d-flex flex-wrap text-nowrap mb-n1">
+									<a href="#" class="btn btn-white btn-lg border-0 me-1 mb-1 text-white active">計畫評審首頁</a>
+									<a href="#" class="btn btn-lg border-0 me-1 mb-1 text-white">個人資料設定</a>
+								</div>
+							</div>
+							<div class="nav">
+								<span class="d-none d-md-inline">歡迎，Liucc, 劉佳淇委員
+									｜
+									<a href="login_review.html">登出</a>
+								</span>
+							</div>
+						</div>
+						<!-- END pos-header -->
+						
+						<!-- BEGIN pos-content -->
+						<div class="pos-content">
+							<div class="pos-content-container">
+								<div class="d-md-flex align-items-center mb-4">
+									<div class="pos-booking-title flex-1">
+										<h2 class="page-title">計畫審核</h2>
+									</div>
+									<div>
+										<div class="w-100px">
+											<button class="btn btn-white btn-sm" tabindex="0" aria-controls="data-table-buttons" type="button" onclick="history.back()"><i class="fas fa-arrow-left"></i> <span>返回前頁</span></button>
+										</div>
+									</div>
+								</div>
+                                <div class="accordion" id="accordion">
+                                    <!--頁籤二：聘審分派-->
+                                    <div class="accordion-item border-0">
+                                        <div class="accordion-header" id="headingOne">
+                                            <button class="accordion-button bg-white px-3 py-10px pointer-cursor collapsed" style="font-size:1.15em;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                                計畫資訊
+                                            </button>
+                                        </div>
+                                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                            <div class="accordion-body bg-gray-500 text-white">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div class="row mb-15px">
+                                                                    <label class="form-label col-form-label col-md-2">計畫編號</label>
+                                                                    <div class="col-md-10 pt-2">
+                                                                        <p style="padding-top:0;font-size:1.25em;">EX112-10802NI</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-15px">
+                                                                    <label class="form-label col-form-label col-md-2">計畫名稱</label>
+                                                                    <div class="col-md-10">
+                                                                        <p style="padding-top:10px;font-size:1.25em;">發展介白素19號抗體免疫療法以及利用單細胞轉錄體分析方法解析膠質母細胞瘤的腫瘤外圍免疫抑制機轉</p>
+                                                                    </div>
+                                                                </div>
+                                                                <hr/>
+                                                                <div class="row mb-15px">
+                                                                    <label class="form-label col-form-label col-md-2">計畫年度</label>
+                                                                    <div class="col-md-4">
+                                                                        <p style="padding-top:0;font-size:1.25em;">112年</p>
+                                                                    </div>
+                                                                    <label class="form-label col-form-label col-md-2">計畫類別</label>
+                                                                    <div class="col-md-4">
+                                                                        <p style="padding-top:0;font-size:1.25em;">統合型計畫－主題研究計畫 (TRG)</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mb-15px">
+                                                                    <label class="form-label col-form-label col-md-2">執行機構</label>
+                                                                    <div class="col-md-4">
+                                                                        <p style="padding-top:0;font-size:1.25em;">中國醫藥大學, 國立臺灣大學</p>
+                                                                    </div>
+                                                                    <label class="form-label col-form-label col-md-2">主持人(協同主持)</label>
+                                                                    <div class="col-md-4">
+                                                                        <p style="padding-top:0;font-size:1.25em;">葉集孝 (李靜琪)</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--頁籤五：核定結果-->
+                                    <div class="accordion-item border-0">
+                                        <div class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button bg-white px-3 py-10px pointer-cursor collapsed" style="font-size:1.15em;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                                評分標準
+                                            </button>
+                                        </div>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                            <div class="accordion-body bg-gray-500">
+                                                <div class="row">
+                                                    <div class="data-table">
+                                                        <!-- BEGIN table -->
+                                                        <table id="data-table-default" class="table table-striped table-bordered align-middle" style="margin-top: 15px;">
+                                                            <tr>
+                                                                <th>傑出創新性(25%)</th>
+                                                                <td>
+                                                                    <p>
+                                                                    1.申請單位之商業模式及其自主營運能力。<br>
+                                                                    2.可提供予培育企業之資源、資金等服務。<br>
+                                                                    3.計畫執行人力專業能力、計畫經費編列合理性。<br>
+                                                                    4.聯合申請合作規劃與權利義務(採聯合申請者方需填寫)。
+                                                                    </p>
+                                                                </td>
+                                                                <td>25分</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>執行合理性(25%)</th>
+                                                                <td>
+                                                                    <p>
+                                                                    1.申請單位之商業模式及其自主營運能力。<br>
+                                                                    2.可提供予培育企業之資源、資金等服務。<br>
+                                                                    3.計畫執行人力專業能力、計畫經費編列合理性。<br>
+                                                                    4.聯合申請合作規劃與權利義務(採聯合申請者方需填寫)。
+                                                                    </p>
+                                                                </td>
+                                                                <td>25分</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>實績與效益(25%)</th>
+                                                                <td>
+                                                                    <p>
+                                                                    1.申請單位之商業模式及其自主營運能力。<br>
+                                                                    2.可提供予培育企業之資源、資金等服務。<br>
+                                                                    3.計畫執行人力專業能力、計畫經費編列合理性。<br>
+                                                                    4.聯合申請合作規劃與權利義務(採聯合申請者方需填寫)。
+                                                                    </p>
+                                                                </td>
+                                                                <td>25分</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>未來擴充性(25%)</th>
+                                                                <td>
+                                                                    <p>
+                                                                    1.申請單位之商業模式及其自主營運能力。<br>
+                                                                    2.可提供予培育企業之資源、資金等服務。<br>
+                                                                    3.計畫執行人力專業能力、計畫經費編列合理性。<br>
+                                                                    4.聯合申請合作規劃與權利義務(採聯合申請者方需填寫)。
+                                                                    </p>
+                                                                </td>
+                                                                <td>25分</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>加分項(1)</th>
+                                                                <td>自設「協助培育企業拓展國際市場(如至國外軟著陸、取得國外訂單等)」指標</td>
+                                                                <td>1~3分</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>加分項(2)</th>
+                                                                <td>取得國際認證或研究登錄者</td>
+                                                                <td>1~3分</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--頁籤一：計畫資訊-->
+                                    <div class="accordion-item border-0">
+                                        <div class="accordion-header" id="headingThree">
+                                            <button class="accordion-button bg-white px-3 py-10px pointer-cursor" style="font-size:1.15em;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true">
+                                                計畫內容 ｜<small style="margin-left: 10px; font-size: 11px;">計畫編號: EX112-10802NI</small>
+                                            </button>
+                                        </div>
+                                        <!--頁籤內容區-->
+                                        <div id="collapseThree" class="accordion-collapse collapse show" data-bs-parent="#accordion">
+                                            <div class="accordion-body bg-gray-500">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <form>
+                                                                    <div class="row mb-15px">
+                                                                        <label class="form-label col-form-label col-md-2">計畫名稱</label>
+                                                                        <div class="col-md-10">
+                                                                            <input type="email" class="form-control mb-5px" value="探討PCNA酪胺酸磷酸化與抗腫瘤免疫的分子機制及其對癌症免疫治療策略的啟示" disabled />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-15px">
+                                                                        <label class="form-label col-form-label col-md-2">計畫期程</label>
+                                                                        <div class="col-md-10">
+                                                                            <div class="input-group input-daterange">
+                                                                                <input type="date" class="form-control" name="start" placeholder="開始日期" value="2023-09-15" disabled>
+                                                                                <span class="input-group-text input-group-addon">至</span>
+                                                                                <input type="date" class="form-control" name="end" placeholder="結束日期" value="2024-12-31" disabled>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-15px">
+                                                                        <label class="form-label col-form-label col-md-2">計畫摘要</label>
+                                                                        <div class="col-md-10">
+                                                                            <textarea class="form-control" rows="6" disabled>非受體酪氨酸蛋白激脢JAK 家族不含SH2和SH3 domains，反而含有kinase-like(JH2)和kinase(JH1)domains。JAK家族的成員目前有JAK1、JAK2、JAK3、和Tyk2。JAK家族在許多細胞間質(cytokine)、干擾素、生長荷爾蒙、泌乳激素、和紅血球生成素的信號傳遞上扮演十分重要的角色。目前有關JAK kinase family所有成員之JH2domain具有何種功能並不清楚，過去我們進行鯉魚JAK1之基因選殖與表現，並利用昆虫桿狀病毒表現載體系統生產帶JH2 domain (c-JH2)或JH1 domain(c-JH1) 或 combineddomains (c-JH(1+2))或完整的鯉魚JAK1(c-JAK1)等多種重組蛋白質，並利用病毒雙重感染與免疫沉澱分析，我們發現c-JH1與c-JH2互相結合在一起，而且c-JH(1+2)與c-JAK1都能對c-JH2進行酪氨酸磷酸化作用，因此我們認為以下問題可能十分重要：是否JH2 domain的酪氨酸磷酸化作用在JAKkinase的信號傳遞扮演重要的角色？JH2 domain的酪氨酸磷酸化作用是否可能和JAKkinases的homo- orhete-rodimerization有關？為了解答上述問題，在本年度計劃裡我們打算利用昆虫桿狀病毒表現載體系統以及細胞內放射性標定(in vivo label- ing)，來生產足夠的重組蛋白質(約200-300 ug)以鑑定c-JH2上被c-JAK1或c-JH(1+2)磷酸化的酪氨酸(tyrosine)與c-JH1上自行磷酸化的酪氨酸，並與c-JH(1+2)上自行磷酸化的酪氨酸互相比較；我們也將利用SV40 promoter與COS-7cells表現 c-JH1和c-JH(1+2)，並利用細胞內放射性標定、Trypsindigestion/雙向電泳分析(2D Mapping)，來比較c-JH1與c-JH(1+2)在哺乳類細胞與昆蟲細胞上自行磷酸化的酪氨酸是否相同。其次，由於鯉魚JAK1上JH2 domain所含酪氨酸與人/老鼠 JAK1上 JH2domain所含酪氨酸的位置幾乎相同(共六個酪氨酸)，最後我們將利用site-directedmutagenesis，將老鼠 JAK1上JH2domain鑑定出來會被磷酸化的酪氨酸改變成苯丙氨酸(phenylalanin)，並構築表現載體，利用transfection使U4A cells表現此重組蛋白質，並探討JAKkinase的信號傳遞是否受影響。選擇U4Acells主要因為該細胞的JAK1基因已被破壞，因此可以比較正常與改變過的JAK1基因在此細胞對干擾素刺激作用是否有所不同？同時也可利用免疫沉澱分析比較在干擾素刺激下，正常與改變過的JAK1與JAK2/Tyk2的結合情形是否受影響。</textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-15px">
+                                                                        <label class="form-label col-form-label col-md-2">計畫書</label>
+                                                                        <div class="col-md-10">
+                                                                            <a href="#modal-message" data-bs-toggle="modal">
+                                                                                <img src="../index_list/pdf_icon.png" style="width:60px;" /><br/>
+                                                                                <small style="margin-top: 10px;">探討PCNA酪胺酸磷酸化與抗腫瘤免疫的分子機制及其對癌症免疫治療策略的啟示.pdf</small>
+                                                                            </a>
+                                                                            <!--p><a href="#">探討PCNA酪胺酸磷酸化與抗腫瘤免疫的分子機制及其對癌症免疫治療策略的啟示.pdf</a><br/>
+                                                                            <small class="fs-12px text-gray-500-darker">(請使用右鍵另存下載檔案)</small></p>
+                                                                            <input class="form-control" type="file" id="formFile" style="display:none;" /-->
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mb-15px">
+                                                                        <label class="form-label col-form-label col-md-2">附件</label>
+                                                                        <div class="col-md-10">
+                                                                            <ol>
+                                                                                <li><a href="#">計畫基本資料表.pdf</a></li>
+                                                                                <li><a href="#">計畫經費編列表.pdf</a></li>
+                                                                                <li><a href="#">計畫人員簡歷與證明.pdf</a></li>
+                                                                                <li><a href="#">單位實績佐證資料.pdf</a></li>
+                                                                                <li><a href="#">主持人實績佐證資料.pdf</a></li>
+                                                                            </ol>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <hr/>
+                                                                <div id="dropzone" style="display:none;">
+                                                                    <form action="/upload" class="dropzone needsclick" id="demo-upload">
+                                                                        <label class="form-label col-form-label col-md-3">附件上傳</label>
+                                                                        <div class="dz-message needsclick">
+                                                                            拖拉檔案到 <b>這裡</b> 或是 <b>點選這裡</b> 來選擇檔案上傳<br />
+                                                                            <span class="dz-note needsclick">
+                                                                                (檔案限制: .pdf, .doc, .ppt, .xls，每一檔案上限10M，若需提供線上預覽檢視，請轉為PDF後上傳)
+                                                                            </span>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+							</div>
+						</div>
+						<!-- END pos-content -->
+						
+						<!-- BEGIN pos-sidebar -->
+						<div class="pos-sidebar reviewsidebar">
+							<div class="h-100 d-flex flex-column">
+								<div class="pos-sidebar-header bg-info">
+									<div class="back-btn">
+										<button type="button" data-dismiss-class="pos-sidebar-mobile-toggled" data-target="#pos" class="btn border-0">
+											<i class="fa fa-chevron-left"></i>
+										</button>
+									</div>
+									<div class="icon"><i class="fa fa-pencil-alt text-white"></i></div>
+									<div class="title">計畫評分
+										<span class="ms-2">
+											<i class="fa fa-info-circle" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-title="個人訊息與系統公告通知" data-bs-placement="top" data-bs-content="個人訊息通知會保留三個月內的通知，並同時透過email發送。若您無法收到email通知，請確認您的email設定以及檢查垃圾信箱。" data-original-title="" title=""></i>
+										</span>
+									</div>
+								</div>
+								<div class="pos-sidebar-body tab-content" data-scrollbar="true" data-height="100%">
+									<div class="tab-pane fade h-100 show active" id="newOrderTab">
+										<div>
+                                                <div class="row mb-15px" style="margin-bottom: 0;">
+                                                    <label class="form-label col-form-label col-md-3">狀態</label>
+                                                    <div class="col-md-9" style="margin-top:5px;font-size:1.25em;">
+                                                        <span class="badge bg-yellow text-black">草稿</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="exampleInputEmail1">評分期限</label>
+                                                    <div class="input-group input-daterange">
+                                                        <input type="datetime-local" class="form-control" name="start" value="2023-09-28T10:00:00" disabled>
+                                                        <span class="input-group-text input-group-addon">至</span>
+                                                        <input type="datetime-local" class="form-control" name="end" value="2023-10-13T17:00:00" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-15px">
+                                                    <label class="form-label">分項給分</label>
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <input type="text" class="form-control form-check-inline is-invalid" value="">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <input type="text" class="form-control form-check-inline" value="3">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <input type="text" class="form-control form-check-inline" value="2">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-15px">
+                                                    <label class="form-label">總分(自動加總)</label>
+                                                    <div>
+                                                        <input type="number" class="form-control mb-5px" value="85.00" disabled />
+                                                        <!--small class="fs-12px text-gray-500-darker">計畫總分自動加總</small-->
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding:0 15px 15px;">
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                        <label class="form-check-label text-gray" for="flexCheckChecked">
+                                                            確認計畫期程無誤
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheckbox">
+                                                        <label class="form-check-label" for="invalidCheckbox">
+                                                            確認人員資格證明附件無誤
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-15px">
+                                                    <label class="form-label">評審意見</label>
+                                                    <div>
+                                                        <textarea class="form-control" rows="3">1. 計畫摘要表及 P.55 量化效益 N+1=114 ... 以此類推,請直接寫正確數字
+2. P.41 C 分項加總不等於 28.8%
+3. 申請須知規定:必要效益(20%)明確訂定績效關鍵指標:訂定具體且可行之績效指標,並說明算方式。計畫必要效益:須說明新增投資、帶動客戶數、帶動客戶營收、上架雲市集等四大效益,創造降本提效或帶動營收等效益。
+計畫架構:E 必要效益須佔 20%,請調整,調整後預定進度表也須調整一致。</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-15px">
+                                                    <label class="form-label" style="margin-top:15px;">評審結果</label>
+                                                    <div style="padding:0 15px;">
+                                                        <div>
+                                                            <div class="form-check mb-2 form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="">
+                                                                <label class="form-check-label text-gray" for="flexRadioDefault2">
+                                                                    建議通過(推薦)
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check mb-2 form-check-inline">
+                                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                                <label class="form-check-label text-gray" for="flexRadioDefault1">
+                                                                    建議不通過(不推薦)
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top:0;">
+                                                    <div class="col-sm-12 text-center" style="margin-top:15px;">
+                                                        <button type="submit" class="btn btn-primary w-100px me-5px">送出</button>
+                                                        <button type="button" class="btn btn-default w-100px" onclick="window.location.href='review_home.html';">儲存草稿</button>
+                                                    </div>
+                                                </div>
+                                        </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END pos-sidebar -->
+					</div>
+					<!-- END pos -->
+					
+					<!-- BEGIN pos-mobile-sidebar-toggler -->
+					<a href="#" class="pos-mobile-sidebar-toggler" data-toggle-class="pos-sidebar-mobile-toggled" data-target="#pos">
+						<i class="iconify display-6" data-icon="solar:bag-smile-bold-duotone"></i>
+						<span class="badge">5</span>
+					</a>
+					<!-- END pos-mobile-sidebar-toggler -->
+
+					<!-- BEGIN #footer -->
+					<div id="footer" class="app-footer m-0">
+						財團法人國家衛生研究院版權所有 &copy; 2023 NHRI All Rights Reserved.
+					</div>
+					<!-- END #footer -->
+
+				
+			</div>
+			<!-- END #content -->
+			
+				<!-- #modal-message -->
+				<div class="modal modal-message fade" id="modal-message" style="height:100%;">
+					<div class="modal-dialog" style="width:75%;margin-left:auto;margin-right:auto;">
+						<div class="modal-content">
+							<div class="modal-header" style="width:100%;">
+								<h4 class="modal-title">附件預覽</h4>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+							</div>
+							<div class="modal-body" style="width:100%;">
+                                <iframe src="../index_list/PDF_Sample_watermark.pdf" style="width:100%; max-height:475px ;padding:0;margin:0;top:0;"></iframe>
+							</div>
+							<div class="modal-footer" style="width:100%;">
+								<a href="javascript:;" class="btn btn-white" data-bs-dismiss="modal">關閉</a>
+								<!--a href="javascript:;" class="btn btn-primary">Save Changes</a-->
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- BEGIN scroll-top-btn -->
+			<a href="javascript:;" class="btn btn-icon btn-circle btn-theme btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+			<!-- END scroll-top-btn -->
+		
+	</div>
+	<!-- END #app -->
+	
+	<!-- BEGIN #modalPos -->
+	<div class="modal modal-pos fade" id="modalPos">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-body p-0">
+					<a href="#" data-bs-dismiss="modal" class="btn-close position-absolute top-0 end-0 m-4"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END #modalPos -->
+	
+
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="../assets/js/vendor.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="../assets/js/demo/pos-header.demo.js"></script>
+	<script src="../assets/js/demo/pos-customer-order.demo.js"></script>
+	<script src="../assets/plugins/switchery/dist/switchery.min.js"></script>
+	<script src="../assets/js/demo/form-slider-switcher.demo.js"></script>
+	<script src="../assets/js/demo/pos-counter-checkout.demo.js"></script>
+	<script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+	<!-- ================== END page-js ================== -->
+</body>
+</html>

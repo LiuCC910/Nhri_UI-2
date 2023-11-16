@@ -116,8 +116,11 @@ body{font-family: "微軟正黑體", "Microsoft JhengHei", Arial, "文泉驛正�
     .pos-mobile-sidebar-toggler {bottom: 30%;}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1048px) {
     .pos.pos-with-header.pos-with-sidebar .pos-sidebar {height: calc(100% - 110px);}
+}
+@media (min-width: 992px) and (max-width: 1047px) {
+    .pos .pos-sidebar {height: calc(100% - 50px);width: 200px;}
 }
 
 figure {
@@ -148,14 +151,55 @@ h2.page-title {font-size: 1.75em;padding: 0;}
     right: 0;
     bottom: 0;
     background-image: url(../../index_list/tablet_Landscape.png);
-    background-size: cover;
-    background-position: top;
-    background-position: center;
-    text-align: center;
+    background-repeat: no-repeat;
+    background-size: auto 806px;
+    background-position: top center;
 }
-.app.bgtablet img {
-    width: 1049px;
+.app iframe {
+    width:1033px;
+    height:695px;
     position: relative;
-    top:100px;
-    left:-18px;
+    top: 75px;
+    left: 45.5%;
+    transform: translateX(-45.5%);
+}
+
+.app.bgtabletPortrait {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../index_list/tablet_Portrait.png);
+    /*background-size: contain;*/
+    background-repeat: no-repeat;
+    background-size: auto 806px;
+    background-position: top center;
+}
+.app iframe.Portrait {
+    width:504px;
+    height:682px;
+    position: relative;
+    top: 62px;
+    left: 49.8%;
+    transform: translateX(-49.8%);
+}
+
+@media (min-width: 992px) and (max-width: 1048px) {
+.pos .pos-sidebar.reviewsidebar {width: 250px !important;}
+.pos.pos-with-header.pos-with-sidebar {padding-right: 250px !important;}
+.pos-content .table.reviewcontent th:nth-child(2),.pos-content .table.reviewcontent td:nth-child(2),.pos-content .table.reviewcontent th:nth-child(3),.pos-content .table.reviewcontent td:nth-child(3) {display: none;}
+.d-md-flex.mb-4{margin-bottom:10px;}
+}
+
+.tabletdirection {
+    border-radius: 25px;
+    width:50px;
+    height:50px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #ccc9c9;
+    background-image: url(../../index_list/85197-200.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    background-position: center;
 }

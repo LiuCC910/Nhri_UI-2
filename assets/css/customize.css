@@ -152,15 +152,15 @@ h2.page-title {font-size: 1.75em;padding: 0;}
     bottom: 0;
     background-image: url(../../index_list/tablet_Landscape.png);
     background-repeat: no-repeat;
-    background-size: auto 806px;
+    background-size: auto 750px;
     background-position: top center;
 }
 .app iframe {
-    width:1033px;
-    height:695px;
+    width:962px;
+    height:645px;
     position: relative;
-    top: 75px;
-    left: 45.5%;
+    top: 70px;
+    left: 46.1%;
     transform: translateX(-45.5%);
 }
 
@@ -183,13 +183,14 @@ h2.page-title {font-size: 1.75em;padding: 0;}
     transform: translateX(-49.8%);
 }
 
-@media (min-width: 992px) and (max-width: 1048px) {
-.pos .pos-sidebar.reviewsidebar {width: 250px !important;}
+@media (min-width: 960px) and (max-width: 1048px) {
+.pos .pos-sidebar.reviewsidebar {width: 250px !important;display:flex;position:fixed;top:50px;right: 0 !important;left: auto;}
+.back-btn {display: none !important;}
 .pos.pos-with-header.pos-with-sidebar {padding-right: 250px !important;}
 .pos-content .table.reviewcontent th:nth-child(2),.pos-content .table.reviewcontent td:nth-child(2),.pos-content .table.reviewcontent th:nth-child(3),.pos-content .table.reviewcontent td:nth-child(3) {display: none;}
 .d-md-flex.mb-4{margin-bottom:10px;}
 }
-@media (max-width: 510px) and (max-width: 991px) {
+@media (max-width: 510px) and (max-width: 961px) {
 .pos-content .table.reviewcontent th:nth-child(6),.pos-content .table.reviewcontent td:nth-child(6),.pos-content .table.reviewcontent th:nth-child(7),.pos-content .table.reviewcontent td:nth-child(7) {display: none;}
 .pos-booking-title a {font-size: 1em;}
 .pos-mobile-sidebar-toggler {bottom: 5%;}

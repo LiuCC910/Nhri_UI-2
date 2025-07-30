@@ -1,7 +1,7 @@
 /*計畫管理系統用*/
 [data-bs-theme=dark] {
-    --bs-pos-sidebar-bg: #012353;
-    --bs-pos-sidebar-bg: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    --bs-pos-sidebar-bg: #004fbe;
+    --bs-pos-sidebar-bg: linear-gradient(90deg, rgba(0,79,790,1) 0%, rgb(7, 7, 175) 35%, rgba(0,212,255,1) 100%);
     --bs-pos-sidebar-header-bg: #4e6985;
     --bs-pos-sidebar-header-color: #FFFFFF;
     --bs-pos-sidebar-header-back-btn-bg: #586f85;
@@ -16,6 +16,10 @@
     --bs-app-sidebar-bg: #011f4d;
     --bs-app-sidebar-bg: linear-gradient(0deg, rgba(1,53,112,1) 0%, rgba(1,31,77,1) 19%, rgba(1,0,23,1) 90%);
 }
+.app-sidebar.app-sidebar-transparent {
+    background-color: rgb(17 0 255 / 0.1);
+}
+.menu-item {margin-bottom: 5px;}
 
 .card-footer.text-center button {margin:0;}
 .card-header {background-color: #003f87;color:#fff;}
@@ -68,8 +72,11 @@ body{font-family: "微軟正黑體", "Microsoft JhengHei", Arial, "文泉驛正�
 /*Admin用*/
 .before {font-size: .5em; color: #666;}
 .card.data-table {font-size: 1.15em;}
-.card.data-table th:nth-child(4), .card.data-table td:nth-child(4) {display: none;}
+/*.card.data-table th:nth-child(4), .card.data-table td:nth-child(4) {display: none;}*/
 .card .badge {min-width: 75px; margin-right: 15px;}
+.dataTables_filter {display: none;}
+.card {font-size:1.2em; line-height:1.75em;}
+
 .widget-stats {min-height: 170px;}
 .chats .chats-item .message:before {top: 25%;}
 .chat-buttons.btn-group.flex-wrap {margin:15px;}
